@@ -20,6 +20,8 @@ CREATE TABLE plastic_pollution
 
 
 /* ElephantSQL Notes:
+Location:
+dumbo.db.elephantsql.com
 
 User&Default Database:
 ctvnplha
