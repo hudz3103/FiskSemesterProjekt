@@ -1,5 +1,5 @@
 /* INFORMATION OM DATABASE
-
+NICE TRY
 SERVER:
 ella.db.elephantsql.com (ella-01)
 ---------------------------------
@@ -14,10 +14,6 @@ URL:
 postgres://xlbhzbfg:C930ISwG6S2oVNB0JWq5tzqMxGytTJys@ella.db.elephantsql.com/xlbhzbfg
 
 */
-
-
-
-
 
 
 
