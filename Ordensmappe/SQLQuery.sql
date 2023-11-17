@@ -10,7 +10,7 @@ CREATE TABLE annual_prod
 
 
 /* Oprettelse af table: Det viser skrald per person i forskellige lande*/
-CREATE TABLE public.plastic_pollution
+CREATE TABLE plastic_pollution
 (
     entity character varying(150),
     code character varying(10),
