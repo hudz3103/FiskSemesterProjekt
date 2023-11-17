@@ -1,5 +1,28 @@
-/* Oprettelse af table: Der viser år og antal produceret */
+/* INFORMATION OM DATABASE
 
+SERVER:
+ella.db.elephantsql.com (ella-01)
+---------------------------------
+User&Default database:
+xlbhzbfg
+---------------------------------
+Password:
+C930ISwG6S2oVNB0JWq5tzqMxGytTJys
+
+
+URL:
+postgres://xlbhzbfg:C930ISwG6S2oVNB0JWq5tzqMxGytTJys@ella.db.elephantsql.com/xlbhzbfg
+
+*/
+
+
+
+
+
+
+
+
+/* Oprettelse af table: Der viser år og antal produceret */
 CREATE TABLE annual_prod
 (
     entity character varying,
@@ -19,9 +42,13 @@ CREATE TABLE plastic_pollution
 );
 
 
+
+
+
 /* ElephantSQL Notes:
 Location:
 dumbo.db.elephantsql.com
+-----------------------
 
 User&Default Database:
 ctvnplha
