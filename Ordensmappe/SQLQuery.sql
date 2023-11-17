@@ -19,4 +19,19 @@ CREATE TABLE public.plastic_pollution
 );
 
 
+/* ElephantSQL Notes:
+
+User&Default Database:
+ctvnplha
+----------------------
+Password:
+DmEPGhVV8wWvATHYsi8aPaKGEr9PX3LZ
+
+
+
+
+
+*/
+
+
 
