@@ -15,12 +15,12 @@ rejectUnauthorized: false,
 });
 const qry = 'SELECT food_item from food';
 klient.connect();
-app.get("/food", async (req, res) => {
+app.get("/food", async (req, res) => { //FEJL?!?!?!?
 try {
 let queryData = await klient.query(qry);
 res.json({
 "ok": true,
-"foods": queryData.rows,
+"foods": queryData.rows, //HER??????
 })
 } catch (error) {
 res.json({
