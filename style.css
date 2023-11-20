@@ -1,3 +1,4 @@
+
 .toppen{
     text-align: center;
     height:500px; 
@@ -15,8 +16,19 @@ h2{
     font-family:fantasy;
 }
 
+.introtekst{
+    background-color: aquamarine;
+}
 .intro{
     margin-left: 200px;
     margin-right: 200px;
     text-align:center;
+}
+
+.garbage{
+    height: 300px;
+    width: 500px;
+    background-image: url("https://imageio.forbes.com/blogs-images/scottsnowden/files/2019/05/GreatPacificGarbagePatch.jpg?format=jpg&width=1440");
+    background-size: cover;
+    float:right;
 }
