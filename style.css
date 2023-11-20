@@ -5,6 +5,18 @@
     background-color: cornflowerblue; /*hvis baggrundsbilledet failer*/
     background-size: cover;
 }
+
 h1{
-padding-top: 60px;
+    padding-top: 60px;
+    font-family:fantasy;
+}
+
+h2{
+    font-family:fantasy;
+}
+
+.intro{
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align:center;
 }
