@@ -15,6 +15,7 @@ rejectUnauthorized: false,
 });
 const qry = 'SELECT food_item from food';
 klient.connect();
+console.log("Sker der noget?");
 app.get("/food", async (req, res) => { //FEJL?!?!?!?
 try {
 let queryData = await klient.query(qry);
