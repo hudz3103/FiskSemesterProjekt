@@ -31,3 +31,8 @@ h2{
     background-size: cover;
     float:right;
 }
+
+/* Teksten bliver fed */
+.intro span {
+    font-weight: bold;
+}
