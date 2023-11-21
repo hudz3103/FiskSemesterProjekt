@@ -13,9 +13,9 @@ const klient = new Client({
         rejectUnauthorized: false,
     },
 });
-const qry = 'SELECT food_item from food';
+const qry = 'SELECT entity,code, mismanaged from plastic_pollution';
 klient.connect();
-app.get("/food", async (req, res) => {
+app.get("/plastic", async (req, res) => {
     try {
         let queryData = await klient.query(qry);
         res.json({
