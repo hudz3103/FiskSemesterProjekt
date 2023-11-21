@@ -10,7 +10,7 @@
 /* Skrifttype til overskrift */
 h1{
     padding-top: 60px;
-    font-family:fantasy;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 /* Skrifttype til underrubrik */
