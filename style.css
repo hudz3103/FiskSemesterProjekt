@@ -10,12 +10,12 @@
 /* Skrifttype til overskrift */
 h1{
     padding-top: 60px;
-    font-family:cursive;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Skrifttype til underrubrik */
 h2{
-    font-family:fantasy;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Baggrundsfarve på overskriften: "Hvad sker der lige med plastik?" */
