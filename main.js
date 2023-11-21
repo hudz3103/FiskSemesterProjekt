@@ -163,3 +163,8 @@ function handleMouseOver(d) {
     // Remove the text elements on mouseout
     svg.selectAll(".tooltip-text").remove();
   }
+
+  
+  $.getJSON('http://localhost:3000/plastic', function(data) {
+    console.log(data);
+});
