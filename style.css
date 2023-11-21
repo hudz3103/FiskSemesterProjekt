@@ -86,4 +86,15 @@ h2{
     background-color: lightcyan;
     margin-bottom: 20px; /* Afstand under kassen */
     margin-top: 40px;
+    margin-right: 20px;
+}
+
+/* Faktaboks for garbage patch */
+.faktaboks {
+    border: 5px solid aquamarine; 
+    padding: 10px; /* Afstand inden for kassen */
+    background-color: lightcyan;
+    margin-bottom: 20px; /* Afstand under kassen */
+    margin-top: 40px;
+    margin-left: 40px;
 }
