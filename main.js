@@ -70,6 +70,17 @@ const data1 = [
     { year: 2019, value: 459 }
   ];
 
+d3.queue()
+  .defer(d3.json, "http://localhost:3000/plastic") //data1
+  .await(ready);
+
+
+//kolonner i hvert dataset udvælges og knyttes til en
+let showData1 = data1.data;
+showData1.forEach(element => {
+  dataMap1.set(element.code, +element.mismanaged);
+});
+
    
 // Set up the chart dimensions
 const margin = { top: 40, right: 70, bottom: 50, left: 50 };
@@ -163,8 +174,3 @@ function handleMouseOver(d) {
     // Remove the text elements on mouseout
     svg.selectAll(".tooltip-text").remove();
   }
-
-  
-  $.getJSON('http://localhost:3000/plastic', function(data) {
-    console.log(data);
-});
