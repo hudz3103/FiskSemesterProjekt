@@ -1,3 +1,4 @@
+/* Intro billede i toppen, som placeres i midten */
 .toppen{
     text-align: center;
     height:500px; 
@@ -6,28 +7,83 @@
     background-size: cover;
 }
 
+/* Skrifttype til overskrift */
 h1{
     padding-top: 60px;
     font-family:fantasy;
 }
 
+/* Skrifttype til underrubrik */
 h2{
     font-family:fantasy;
 }
 
+/* Baggrundsfarve på overskriften: "Hvad sker der lige med plastik?" */
 .introtekst{
     background-color: aquamarine;
 }
+
+/* Introteksten indsættes og placeres i midten */
 .intro{
     margin-left: 400px;
     margin-right: 400px;
     text-align:center;
 }
 
+/* Billede af garbage patch indsættes og rettes til */
 .garbage{
     height: 300px;
     width: 500px;
     background-image: url("https://imageio.forbes.com/blogs-images/scottsnowden/files/2019/05/GreatPacificGarbagePatch.jpg?format=jpg&width=1440");
     background-size: cover;
     float:right;
+}
+
+/* Teksten bliver fed */
+.intro span {
+    font-weight: bold;
+}
+
+
+/* Visualisering 1 placeres til højre på hjemmesiden */
+.vis1 {
+    float: right;
+    box-sizing: border-box;
+    padding: 20px; /* Padding efter behov */
+ }
+ 
+ 
+ /* Overskrift og teksten til visualisering 1 placeres ved siden af, på venstre side af visualiseringen */
+ .tekstvis1 {
+    width: 50%;
+    float: right;
+    box-sizing: border-box;
+    padding: 20px; /* Padding efter behov */
+ } 
+
+ /* Billede af garbage patch indsættes og rettes til så det placeres på venstre side */
+.garbage {
+    height: 300px;
+    width: 500px;
+    background-image: url("https://imageio.forbes.com/blogs-images/scottsnowden/files/2019/05/GreatPacificGarbagePatch.jpg?format=jpg&width=1440");
+    background-size: cover;
+    float: left;
+    margin-left: 6.5%; 
+    clear: both;  /* Forindre at float-elementer flyder sammen */
+}
+
+/* Tekst til garbage patch placeres ved siden af, på højre side af billedet */
+.tekstgarbage {
+    width: 50%;
+    float: left;
+    padding: 20px; /* Gælder fra venstre af, af billedet */
+}
+
+/* Faktaboks for visualisering 1 */
+.faktaboks {
+    border: 5px solid aquamarine; 
+    padding: 10px; /* Afstand inden for kassen */
+    background-color: lightcyan;
+    margin-bottom: 20px; /* Afstand under kassen */
+    margin-top: 40px;
 }
