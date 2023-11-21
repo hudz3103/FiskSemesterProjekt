@@ -1,3 +1,4 @@
+/* Intro billede i toppen, som placeres i midten */
 .toppen{
     text-align: center;
     height:500px; 
@@ -6,24 +7,30 @@
     background-size: cover;
 }
 
+/* Skrifttype til overskrift */
 h1{
     padding-top: 60px;
     font-family:fantasy;
 }
 
+/* Skrifttype til underrubrik */
 h2{
     font-family:fantasy;
 }
 
+/* Baggrundsfarve på overskriften: "Hvad sker der lige med plastik?" */
 .introtekst{
     background-color: aquamarine;
 }
+
+/* Introteksten indsættes og placeres i midten */
 .intro{
     margin-left: 400px;
     margin-right: 400px;
     text-align:center;
 }
 
+/* Billede af garbage patch indsættes og rettes til */
 .garbage{
     height: 300px;
     width: 500px;
