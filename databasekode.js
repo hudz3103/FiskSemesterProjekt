@@ -1,8 +1,10 @@
 const express = require("express");
+const cors = require("cors"); //Importere Cors
 const app = express();
 const port = 3000;
 const { Client } = require("pg");
 var pg = require('pg');
+
 const klient = new Client({
     user: "xlbhzbfg",
     host: "ella.db.elephantsql.com",
@@ -13,6 +15,8 @@ const klient = new Client({
         rejectUnauthorized: false,
     },
 });
+
+app.use(cors());
 const qry = 'SELECT entity,code, mismanaged from plastic_pollution';
 klient.connect();
 app.get("/plastic", async (req, res) => {
