@@ -70,20 +70,7 @@ const data1 = [
   { year: 2019, value: 459 }
 ];
 
-/* Kigger på det senere
 
-d3.queue()
-.defer(d3.json, "http://localhost:3000/plastic") //data1
-.await(ready);
-
-
-//kolonner i hvert dataset udvælges og knyttes til en
-let showData1 = data1.data;
-showData1.forEach(element => {
-dataMap1.set(element.code, +element.mismanaged);
-});
-
-*/
 
  
 // Set up the chart dimensions
@@ -191,12 +178,64 @@ fetch("http://localhost:3000/plastic")
   return response.json();
 })
 .then(data => {
+
   // Log the data to the console
   console.log(data);
   data2 = data;
   console.log(data2); //Data kommer ind i vores data2 array
-
   console.log(data2.foods[1]) //Her kan man få fat i et land
+
+  
+  const viz2data = {
+    name: 'root',
+    children: data2.foods
+      .filter(row => row.mismanaged !== 5) // Remove nodes with a value of 0
+      .map(row => ({
+        country: row.code,
+        mismanaged: row.mismanaged
+      }))
+  };
+
+
+
+  const pack = d3.pack().size([800, 800]).padding(10); // Adjust the padding value as needed
+  // Create a hierarchy from the data
+  const root = d3.hierarchy(viz2data)
+    .sum(d => d.mismanaged)
+    .sort((a, b) => b.mismanaged - a.mismanaged); // Sort nodes by mismanaged value
+  
+  // Assign the hierarchical data to the pack layout
+  const packedData = pack(root);
+  // Select the circular packing SVG
+
+const svg2 = d3.select("#vis2").attr("width", 800).attr("height", 800);
+
+// ...
+// Create circles for each node, excluding the root and nodes with mismanaged value less than 5
+const nodes = svg2
+  .selectAll('circle')
+  .data(packedData.descendants().filter(d => d.data.mismanaged >= 0.05))  // Filter out values less than 5
+  .enter()
+  .append('circle')
+  .attr('cx', d => d.x)
+  .attr('cy', d => d.y)
+  .attr('r', d => d.r)
+  .style('fill', 'red');
+
+
+
+
+// Optional: Add text labels
+svg2
+  .selectAll('text')  // Select from svg2, not svg
+  .data(packedData.descendants().filter(d => d.data.mismanaged >= 0.05))
+  .enter()
+  .append('text')
+  .attr('x', d => d.x)
+  .attr('y', d => d.y)
+  .attr('dy', '0.3em')
+  .attr('text-anchor', 'middle')
+  .text(d => d.data.country);
 
 })
 .catch(error => {
