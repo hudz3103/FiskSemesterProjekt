@@ -202,7 +202,7 @@ const data = {
     };
 
 // Set up SVG container
-let svg3 = d3.select(".vis3")
+const svg3 = d3.select(".vis3")
 .append("svg")
   .attr("width", 800)  // Increased width
   .attr("height", 800); // Increased height;
@@ -212,7 +212,7 @@ const zoom = d3.zoom()
   .scaleExtent([1, 8])
   .on("zoom", zoomed);
 
-svg3.call(zoom);
+//svg3.call(zoom); */den fucker med scroll funktionen
 
 // Create a group for the circles and labels
 const group = svg3.append("g")
