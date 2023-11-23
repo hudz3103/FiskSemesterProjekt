@@ -180,6 +180,113 @@ function handleMouseOut() {
 }
 
 
+
+// JSON data
+const data = {
+  "name": "Plastic waste generated",
+  "value": "353 Mio",
+  "wasteDetails": [
+    {
+      "name": "Mismanaged plastic waste",
+      "value": "82 Mio"
+    },
+    {
+      "name": "Plastic leaked to the environment",
+      "value": "19 Mio",
+    },
+        {
+          "name": "Plastic leaked to rivers and oceans",
+          "value": "6 Mio"
+        }
+      ]
+    };
+
+// Set up SVG container
+let svg3 = d3.select(".vis3")
+.append("svg")
+  .attr("width", 800)  // Increased width
+  .attr("height", 800); // Increased height;
+
+// Define the zoom behavior
+const zoom = d3.zoom()
+  .scaleExtent([1, 8])
+  .on("zoom", zoomed);
+
+svg3.call(zoom);
+
+// Create a group for the circles and labels
+const group = svg3.append("g")
+  .attr("transform", "translate(400, 400)"); // Centered translation
+
+// Draw the circles
+const circles = group.selectAll("circle")
+  .data([353, 82, 19, 6])
+  .enter().append("circle")
+  .attr("r", d => d)
+  .attr("fill", (d, i) => d3.schemeCategory10[i])
+  .on("click", clicked)
+  .on("mouseover", mouseover)
+  .on("mouseout", mouseout);
+
+let zoomedIn = false;
+
+// Zoom function
+function zoomed() {
+  group.attr("transform", d3.event.transform);
+}
+
+// Click event handler
+function clicked() {
+  const clickedCircle = d3.select(this);
+
+  // Toggle between zooming in and zooming out
+  if (!zoomedIn) {
+    // Zoom in on the clicked circle
+    group.transition()
+      .duration(750)
+      .attr("transform", `translate(${400 - clickedCircle.attr("cx")}, ${400 - clickedCircle.attr("cy")}) scale(8)`);
+    zoomedIn = true;
+  } else {
+    // Zoom out to the original size
+    group.transition()
+      .duration(750)
+      .attr("transform", "translate(400, 400) scale(1)");
+    zoomedIn = false;
+  }
+}
+
+// Mouseover event handler
+function mouseover(d, i) {
+  const name = getNameFromIndex(data, i);
+  const tooltip = svg3.append("text")
+    .attr("class", "tooltip")
+    .attr("x", 400)
+    .attr("y", 400)
+    .attr("dy", -circles.data()[i] - 10)
+    .attr("text-anchor", "middle")
+    .style("fill", "black")
+    .style("font-weight", "bold")
+    .text(`${name}: ${circles.data()[i]} Mio`);
+}
+
+// Function to get the name from the nested JSON structure based on index
+function getNameFromIndex(obj, index) {
+  if (index === 0) {
+    return obj.name;
+  } else if (Array.isArray(obj.wasteDetails)) {
+    return obj.wasteDetails[index - 1].name;
+  } else if (obj.wasteDetails && index === 1 && Array.isArray(obj.wasteDetails[1].details)) {
+    return obj.wasteDetails[1].details[0].name;
+  }
+  return null;
+}
+
+// Mouseout event handler
+function mouseout() {
+  svg3.select(".tooltip").remove();
+}
+
+
 // 
 let data2;
 // Fetch data from the server
