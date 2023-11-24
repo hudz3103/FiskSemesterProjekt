@@ -205,6 +205,8 @@ const zoom = d3.zoom()
 const group = svg3.append("g")
   .attr("transform", "translate(400, 400)"); // Centered translation
 
+  const customColors = ["#b0c4de", "#4682b4", "#4169e1", "#00008b"];
+
   const circles = group.selectAll("circle")
   .data([353, 82, 19, 6])
   .enter().append("circle")
@@ -213,6 +215,7 @@ const group = svg3.append("g")
     return i !== 0 ? d * 2 : d; 
   })
   .attr("fill", (d, i) => d3.schemeCategory10[i])
+  .attr("fill", (d, i) => customColors[i])
   .on("click", clicked)
   .on("mouseover", mouseover)
   .on("mouseout", mouseout);
