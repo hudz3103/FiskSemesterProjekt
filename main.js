@@ -257,7 +257,8 @@ function mouseover(d, i) {
   const tooltip = svg3.append("text")
     .attr("class", "tooltip")
     .attr("text-anchor", "middle")
-    .style("fill", "black")
+    .attr("font-size","20px")
+    .style("fill", "darkorange")
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
 
