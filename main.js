@@ -256,7 +256,7 @@ function mouseover(d, i) {
     .attr("y", 400)
     .attr("dy", -circles.data()[i] - 10)
     .attr("text-anchor", "middle")
-    .style("fill", "black")
+    .style("fill", "red")
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
 }
