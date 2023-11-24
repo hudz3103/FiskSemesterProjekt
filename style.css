@@ -126,4 +126,14 @@ h2{
     margin-right: 10px; /* Margin til højre for at skabe afstand mellem boksen og resten af indholdet */
 }
 
+#tooltip {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Avoid blocking mouse events on the tooltip itself */
+  }
+
 

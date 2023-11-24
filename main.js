@@ -295,7 +295,29 @@ fetch("http://localhost:3000/plastic")
   console.log(data);
   data2 = data;
   console.log(data2); //Data kommer ind i vores data2 array
-  console.log(data2.foods[1]) //Her kan man få fat i et land
+
+  //Vi filtrere data sådan at kontinenter også får et navn istedet for at de står blanke
+
+  for(let i = 0; i < data2.foods.length; i++){
+    currentData = data2.foods[i]; //Vi behøver ikke at skrive data2.foods[i] om og om igen
+    dataEntity = currentData.entity; //Country name
+    dataCode = currentData.code; // Country code
+    console.log(dataEntity);
+    console.log(dataCode);
+
+    if (data2.foods[i].code == null){
+      data2.foods[i].code = dataEntity;
+      console.log("This is not a country! " + dataEntity);
+
+    } else {
+      console.log("This is a country");
+      console.log("Country is " + dataEntity);
+      console.log ("Code is " + dataCode);
+      console.log("--");
+    }
+
+
+  };
 
   
   const viz2data = {
@@ -311,6 +333,7 @@ fetch("http://localhost:3000/plastic")
 
 
 
+
   const pack = d3.pack().size([800, 800]).padding(10); // Adjust the padding value as needed
   // Create a hierarchy from the data
   const root = d3.hierarchy(viz2data)
@@ -323,7 +346,7 @@ fetch("http://localhost:3000/plastic")
 
 const svg2 = d3.select("#vis2").attr("width", 800).attr("height", 800);
 
-// ...
+
 // Create circles for each node, excluding the root and nodes with mismanaged value less than 5
 const nodes = svg2
   .selectAll('circle')
@@ -333,10 +356,32 @@ const nodes = svg2
   .attr('cx', d => d.x)
   .attr('cy', d => d.y)
   .attr('r', d => d.r)
-  .style('fill', 'red');
+  .style('fill', 'red')
+  .on('mouseover', handleMouseOver)
+  .on('mouseout', handleMouseOut);
 
 
-//HEHEHEH 
+// Define the mouseover and mouseout event handlers
+function handleMouseOver(d, i) {
+  // Show a tooltip with the country, entity, and mismanaged value
+  const tooltip = d3.select("#tooltip");
+
+  tooltip.transition()
+    .duration(200)
+    .style("opacity", .9);
+
+  tooltip.html(`<strong>Country:</strong> ${d.data.country}<br><strong>Entity:</strong> ${d.data.entity}<br><strong>Mismanaged kg/per person:</strong> ${d.data.mismanaged}`)
+    .style("left", (d3.event.pageX) + "px")
+    .style("top", (d3.event.pageY - 28) + "px");
+}
+
+function handleMouseOut(d, i) {
+  // Hide the tooltip on mouseout
+  d3.select("#tooltip")
+    .transition()
+    .duration(500)
+    .style("opacity", 0);
+}
 
 // Optional: Add text labels
 svg2
