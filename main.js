@@ -252,19 +252,22 @@ function clicked() {
 // Mouseover event handler
 function mouseover(d, i) {
   const name = getNameFromIndex(data, i);
-  // Get the mouse coordinates
-  const [x, y] = d3.mouse(svg3.node());
 
+  // Create the tooltip
   const tooltip = svg3.append("text")
     .attr("class", "tooltip")
-    .attr("x", x)
-    .attr("y", y - 10)
-   // .attr("dy", -circles.data()[i] - 10)
     .attr("text-anchor", "middle")
     .style("fill", "black")
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
+
+  // Update tooltip position on mousemove
+  svg3.on("mousemove", function () {
+    const [x, y] = d3.mouse(this);
+    tooltip.attr("x", x).attr("y", y - 10); // Adjust the vertical position
+  });
 }
+
 
 // Function to get the name from the nested JSON structure based on index
 function getNameFromIndex(obj, index) {
@@ -281,7 +284,9 @@ function getNameFromIndex(obj, index) {
 // Mouseout event handler
 function mouseout() {
   svg3.select(".tooltip").remove();
+  svg3.on("mousemove", null); // Remove the mousemove event listener
 }
+
 
 
 // 
