@@ -220,9 +220,9 @@ const group = svg3.append("g")
   .on("mouseover", mouseover)
   .on("mouseout", mouseout);
 
-let zoomedIn = false;
+//let zoomedIn = false;
 
-// Zoom function
+// Zoom function (selvom vi har fjernet zoom, så virker koden ikke, hvis vi sletter det her)
 function zoomed() {
   group.attr("transform", d3.event.transform);
 }
@@ -252,11 +252,14 @@ function clicked() {
 // Mouseover event handler
 function mouseover(d, i) {
   const name = getNameFromIndex(data, i);
+  // Get the mouse coordinates
+  const [x, y] = d3.mouse(svg3.node());
+
   const tooltip = svg3.append("text")
     .attr("class", "tooltip")
-    .attr("x", 400)
-    .attr("y", 400)
-    .attr("dy", -circles.data()[i] - 10)
+    .attr("x", x)
+    .attr("y", y - 10)
+   // .attr("dy", -circles.data()[i] - 10)
     .attr("text-anchor", "middle")
     .style("fill", "black")
     .style("font-weight", "bold")
