@@ -301,7 +301,8 @@ fetch("http://localhost:3000/plastic")
       .filter(row => row.mismanaged !== 5) // Remove nodes with a value of 0
       .map(row => ({
         country: row.code,
-        mismanaged: row.mismanaged
+        mismanaged: row.mismanaged,
+        entity : row.entity
       }))
   };
 
