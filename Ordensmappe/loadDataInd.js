@@ -37,3 +37,4 @@
         var dataMap1 = d3.map(); //Map for datasæt 1
         var dataMap2 = d3.map(); //Map for datasæt 2
         var dataMap3 = d3.map(); //Map for datasæt 3
+        }

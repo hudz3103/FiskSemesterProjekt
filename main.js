@@ -205,11 +205,13 @@ const zoom = d3.zoom()
 const group = svg3.append("g")
   .attr("transform", "translate(400, 400)"); // Centered translation
 
-// Draw the circles
-const circles = group.selectAll("circle")
+  const circles = group.selectAll("circle")
   .data([353, 82, 19, 6])
   .enter().append("circle")
-  .attr("r", d => d)
+  .attr("r", (d, i) => {
+    // Adjust the radius of the inner three circles
+    return i !== 0 ? d * 1.5 : d; 
+  })
   .attr("fill", (d, i) => d3.schemeCategory10[i])
   .on("click", clicked)
   .on("mouseover", mouseover)
