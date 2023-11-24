@@ -231,6 +231,8 @@ function zoomed() {
 function clicked() {
   const clickedCircle = d3.select(this);
 
+}
+/*
   // Toggle between zooming in and zooming out
   if (!zoomedIn) {
     // Zoom in on the clicked circle
@@ -246,7 +248,7 @@ function clicked() {
     zoomedIn = false;
   }
 }
-
+*/
 // Mouseover event handler
 function mouseover(d, i) {
   const name = getNameFromIndex(data, i);
@@ -256,7 +258,7 @@ function mouseover(d, i) {
     .attr("y", 400)
     .attr("dy", -circles.data()[i] - 10)
     .attr("text-anchor", "middle")
-    .style("fill", "red")
+    .style("fill", "black")
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
 }
