@@ -210,7 +210,7 @@ const group = svg3.append("g")
   .enter().append("circle")
   .attr("r", (d, i) => {
     // Adjust the radius of the inner three circles
-    return i !== 0 ? d * 1.5 : d; 
+    return i !== 0 ? d * 2 : d; 
   })
   .attr("fill", (d, i) => d3.schemeCategory10[i])
   .on("click", clicked)
