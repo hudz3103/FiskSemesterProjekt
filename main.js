@@ -321,6 +321,8 @@ fetch("http://localhost:3000/plastic")
 const svg2 = d3.select("#vis2").attr("width", 800).attr("height", 800);
 
 // ...
+
+
 // Create circles for each node, excluding the root and nodes with mismanaged value less than 5
 const nodes = svg2
   .selectAll('circle')
@@ -330,10 +332,33 @@ const nodes = svg2
   .attr('cx', d => d.x)
   .attr('cy', d => d.y)
   .attr('r', d => d.r)
-  .style('fill', 'red');
+  .style('fill', 'red')
+  .on('mouseover', handleMouseOver)
+  .on('mouseout', handleMouseOut);
 
+// ...
 
+// Define the mouseover and mouseout event handlers
+function handleMouseOver(d, i) {
+  // Show a tooltip with the country, entity, and mismanaged value
+  const tooltip = d3.select("#tooltip");
 
+  tooltip.transition()
+    .duration(200)
+    .style("opacity", .9);
+
+  tooltip.html(`<strong>Country:</strong> ${d.data.country}<br><strong>Entity:</strong> ${d.data.entity}<br><strong>Mismanaged:</strong> ${d.data.mismanaged}`)
+    .style("left", (d3.event.pageX) + "px")
+    .style("top", (d3.event.pageY - 28) + "px");
+}
+
+function handleMouseOut(d, i) {
+  // Hide the tooltip on mouseout
+  d3.select("#tooltip")
+    .transition()
+    .duration(500)
+    .style("opacity", 0);
+}
 
 // Optional: Add text labels
 svg2
