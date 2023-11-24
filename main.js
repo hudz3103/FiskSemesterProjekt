@@ -292,7 +292,15 @@ fetch("http://localhost:3000/plastic")
   console.log(data);
   data2 = data;
   console.log(data2); //Data kommer ind i vores data2 array
-  console.log(data2.foods[1]) //Her kan man få fat i et land
+  console.log(data2.foods[0]) //Her kan man få fat i et land
+
+  //Data filtration
+
+  for(let i = 0; i < data2.foods.length; i++){
+    currentData = data2.foods[i];
+    console.log(currentData);
+    
+  };
 
   
   const viz2data = {
@@ -305,6 +313,7 @@ fetch("http://localhost:3000/plastic")
         entity : row.entity
       }))
   };
+
 
 
 
