@@ -83,7 +83,7 @@ h2 {
   padding: 10px; /* Afstand inden for kassen */
   background-color: lightcyan;
   margin-bottom: 20px; /* Afstand under kassen */
-  margin-top: 50px; /* Ændrer afstanden fra toppen */
+  margin-top: 50px;
   width: 20%; /* Ændrer bredden af faktaboksen */
   margin-right: 10px; /* Margin til højre for at skabe afstand mellem boksen og resten af indholdet */
 }
