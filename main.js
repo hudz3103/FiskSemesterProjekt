@@ -225,9 +225,9 @@ const circles = group
   .on("mouseover", mouseover)
   .on("mouseout", mouseout);
 
-let zoomedIn = false;
+//let zoomedIn = false;
 
-// Zoom function
+// Zoom function (selvom vi har fjernet zoom, så virker koden ikke, hvis vi sletter det her)
 function zoomed() {
   group.attr("transform", d3.event.transform);
 }
@@ -235,7 +235,8 @@ function zoomed() {
 // Click event handler
 function clicked() {
   const clickedCircle = d3.select(this);
-
+}
+/*
   // Toggle between zooming in and zooming out
   if (!zoomedIn) {
     // Zoom in on the clicked circle
@@ -258,20 +259,24 @@ function clicked() {
     zoomedIn = false;
   }
 }
-
+*/
 // Mouseover event handler
 function mouseover(d, i) {
   const name = getNameFromIndex(data, i);
   const tooltip = svg3
     .append("text")
     .attr("class", "tooltip")
-    .attr("x", 400)
-    .attr("y", 400)
-    .attr("dy", -circles.data()[i] - 10)
     .attr("text-anchor", "middle")
+    .attr("font-size", "20px")
     .style("fill", "black")
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
+
+  // Update tooltip position on mousemove
+  svg3.on("mousemove", function () {
+    const [x, y] = d3.mouse(this);
+    tooltip.attr("x", x).attr("y", y - 10); // Adjust the vertical position
+  });
 }
 
 // Function to get the name from the nested JSON structure based on index
@@ -293,6 +298,7 @@ function getNameFromIndex(obj, index) {
 // Mouseout event handler
 function mouseout() {
   svg3.select(".tooltip").remove();
+  svg3.on("mousemove", null); // Remove the mousemove event listener
 }
 
 //
@@ -310,26 +316,7 @@ fetch("http://localhost:3000/plastic")
     console.log(data);
     data2 = data;
     console.log(data2); //Data kommer ind i vores data2 array
-
-    //Vi filtrere data sådan at kontinenter også får et navn istedet for at de står blanke
-
-    for (let i = 0; i < data2.foods.length; i++) {
-      currentData = data2.foods[i]; //Vi behøver ikke at skrive data2.foods[i] om og om igen
-      dataEntity = currentData.entity; //Country name
-      dataCode = currentData.code; // Country code
-      console.log(dataEntity);
-      console.log(dataCode);
-
-      if (data2.foods[i].code == null) {
-        data2.foods[i].code = dataEntity;
-        console.log("This is not a country! " + dataEntity);
-      } else {
-        console.log("This is a country");
-        console.log("Country is " + dataEntity);
-        console.log("Code is " + dataCode);
-        console.log("--");
-      }
-    }
+    console.log(data2.foods[1]); //Her kan man få fat i et land
 
     const viz2data = {
       name: "root",
@@ -355,6 +342,7 @@ fetch("http://localhost:3000/plastic")
 
     const svg2 = d3.select("#vis2").attr("width", 800).attr("height", 800);
 
+    // ...
     // Create circles for each node, excluding the root and nodes with mismanaged value less than 5
     const nodes = svg2
       .selectAll("circle")
@@ -364,29 +352,9 @@ fetch("http://localhost:3000/plastic")
       .attr("cx", (d) => d.x)
       .attr("cy", (d) => d.y)
       .attr("r", (d) => d.r)
-      .style("fill", "red")
-      .on("mouseover", handleMouseOver)
-      .on("mouseout", handleMouseOut);
+      .style("fill", "red");
 
-    // Define the mouseover and mouseout event handlers
-    function handleMouseOver(d, i) {
-      // Show a tooltip with the country, entity, and mismanaged value
-      const tooltip = d3.select("#tooltip");
-
-      tooltip.transition().duration(200).style("opacity", 0.9);
-
-      tooltip
-        .html(
-          `<strong>Country:</strong> ${d.data.country}<br><strong>Entity:</strong> ${d.data.entity}<br><strong>Mismanaged kg/per person:</strong> ${d.data.mismanaged}`
-        )
-        .style("left", d3.event.pageX + "px")
-        .style("top", d3.event.pageY - 28 + "px");
-    }
-
-    function handleMouseOut(d, i) {
-      // Hide the tooltip on mouseout
-      d3.select("#tooltip").transition().duration(500).style("opacity", 0);
-    }
+    //HEHEHEH
 
     // Optional: Add text labels
     svg2
