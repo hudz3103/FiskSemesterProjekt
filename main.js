@@ -268,7 +268,7 @@ function mouseover(d, i) {
     .attr("class", "tooltip")
     .attr("text-anchor", "middle")
     .attr("font-size", "20px")
-    .style("fill", "black")
+    .style("fill", "darkorange")
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
 
