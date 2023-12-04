@@ -225,9 +225,9 @@ const circles = group
   .on("mouseover", mouseover)
   .on("mouseout", mouseout);
 
-let zoomedIn = false;
+//let zoomedIn = false;
 
-// Zoom function
+// Zoom function (selvom vi har fjernet zoom, så virker koden ikke, hvis vi sletter det her)
 function zoomed() {
   group.attr("transform", d3.event.transform);
 }
@@ -235,7 +235,8 @@ function zoomed() {
 // Click event handler
 function clicked() {
   const clickedCircle = d3.select(this);
-
+}
+/*
   // Toggle between zooming in and zooming out
   if (!zoomedIn) {
     // Zoom in on the clicked circle
@@ -258,20 +259,24 @@ function clicked() {
     zoomedIn = false;
   }
 }
-
+*/
 // Mouseover event handler
 function mouseover(d, i) {
   const name = getNameFromIndex(data, i);
   const tooltip = svg3
     .append("text")
     .attr("class", "tooltip")
-    .attr("x", 400)
-    .attr("y", 400)
-    .attr("dy", -circles.data()[i] - 10)
     .attr("text-anchor", "middle")
+    .attr("font-size", "20px")
     .style("fill", "black")
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
+
+  // Update tooltip position on mousemove
+  svg3.on("mousemove", function () {
+    const [x, y] = d3.mouse(this);
+    tooltip.attr("x", x).attr("y", y - 10); // Adjust the vertical position
+  });
 }
 
 // Function to get the name from the nested JSON structure based on index
@@ -293,6 +298,7 @@ function getNameFromIndex(obj, index) {
 // Mouseout event handler
 function mouseout() {
   svg3.select(".tooltip").remove();
+  svg3.on("mousemove", null); // Remove the mousemove event listener
 }
 
 //
