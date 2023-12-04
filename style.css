@@ -1,11 +1,16 @@
 /* Intro billede i toppen, som placeres i midten */
 .toppen {
   text-align: center;
-  height: 750px;
+  height: 1000px;
   background-image: url("https://www.condorferries.co.uk/remote.axd/condorlivemedia.azureedge.net/media/11088/plastic-in-the-ocean.jpg?anchor=center&amp;mode=crop&amp;width=1920&amp;height=1080&amp;rnd=132215866990000000");
   background-color: cornflowerblue; /*hvis baggrundsbilledet failer*/
   background-size: cover;
   margin: -0.5%;
+}
+
+body {
+  /*background-color: lightcyan;  For browsers that do not support gradients */
+  background-image: linear-gradient(#24b5a9, rgb(20, 118, 199));
 }
 
 /* Skrifttype til overskrift */
@@ -76,16 +81,14 @@ h2 {
 
 /* Faktaboks for visualisering 1 */
 .tekstvis1.faktaboks {
-  background-color: lightcyan;
-  border: 5px solid aquamarine;
   width: 200px;
   height: 200px;
   margin: 50px;
+  font-size: larger;
 }
 /* Faktaboks for garbage patch */
 .tekstgarbage.faktaboks {
   background-color: lightcyan;
-  border: 5px solid aquamarine;
   width: 200px;
   height: 250px;
   margin: 50px;
@@ -93,8 +96,7 @@ h2 {
 
 /* Faktaboks for visualisering 2 */
 .tekstvis2.faktaboks {
-  background-color: lightcyan;
-  border: 5px solid aquamarine;
+  background-color: cyan;
   width: 200px;
   height: 250px;
   margin: 50px;
@@ -103,7 +105,6 @@ h2 {
 /* Faktaboks for visualisering 3 */
 .tekstvis3.faktaboks {
   background-color: lightcyan;
-  border: 5px solid aquamarine;
   width: 200px;
   height: 250px;
   margin: 50px;

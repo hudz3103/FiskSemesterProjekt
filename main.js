@@ -128,7 +128,7 @@ svg
   .append("path")
   .datum(data1)
   .attr("fill", "none")
-  .attr("stroke", "steelblue")
+  .attr("stroke", "cyan")
   .attr("stroke-width", 4)
   .attr("d", line);
 
@@ -370,7 +370,7 @@ fetch("http://localhost:3000/plastic")
       .attr("cx", (d) => d.x)
       .attr("cy", (d) => d.y)
       .attr("r", (d) => d.r)
-      .style("fill", "red")
+      .style("fill", "cyan")
       .on("mouseover", handleMouseOver)
       .on("mouseout", handleMouseOut);
 
