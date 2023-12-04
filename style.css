@@ -74,18 +74,33 @@ h2 {
 .tekstvis2,
 .tekstvis3,
 .tekstgarbage {
-  flex-basis: calc(40% - 20px); /* Danner 3 kolonner med 20px afstand */
+  flex-basis: calc(25% - 20px); /* Danner 3 kolonner med 20px afstand */
   box-sizing: border-box;
   padding: 20px;
 }
 
 /* Faktaboks for visualisering 1 */
 .tekstvis1.faktaboks {
-  width: 200px;
-  height: 200px;
+  position: relative; /* Establishes a positioning context for absolute positioning */
+  width: 300px;
+  height: 300px;
   margin: 50px;
   font-size: larger;
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: cyan; /* Background color */
+  margin-top: 200px;
+  margin-left: 100px;
 }
+
+.tekstvis1.faktaboks h3 {
+  margin: 0; /* Remove default margin for the heading */
+}
+
 /* Faktaboks for garbage patch */
 .tekstgarbage.faktaboks {
   background-color: lightcyan;
@@ -96,19 +111,44 @@ h2 {
 
 /* Faktaboks for visualisering 2 */
 .tekstvis2.faktaboks {
-  background-color: cyan;
-  width: 200px;
-  height: 250px;
-  margin: 50px;
+  position: relative; /* Establishes a positioning context for absolute positioning */
+  width: 800px;
+  height: 400px;
+  font-size: larger;
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: cyan; /* Background color */
+  margin-top: 250px;
+  margin-left: 100px;
+}
+
+.tekstvis2.faktaboks h3 {
+  margin-top: -20px; /* Lift the text up by 20 pixels */
 }
 
 /* Faktaboks for visualisering 3 */
 .tekstvis3.faktaboks {
-  background-color: lightcyan;
-  width: 200px;
-  height: 250px;
+  position: relative; /* Establishes a positioning context for absolute positioning */
+  width: 300px;
+  height: 300px;
   margin: 50px;
+  font-size: larger;
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: cyan; /* Background color */
+  margin-top: 200px;
+  margin-left: 100px;
 }
+
+
 
 #tooltip {
   position: absolute;

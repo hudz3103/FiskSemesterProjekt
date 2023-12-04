@@ -71,9 +71,9 @@ const data1 = [
 ];
 
 // Set up the chart dimensions
-const margin = { top: 40, right: 70, bottom: 50, left: 50 };
-const width = 600 - margin.left - margin.right;
-const height = 400 - margin.top - margin.bottom;
+const margin = { top: 40, right: 90, bottom: 20, left: 90 };
+const width = 800 - margin.left - margin.right; // Adjust the width as needed
+const height = 600 - margin.top - margin.bottom; // Adjust the height as needed
 
 // Create an SVG container
 const svg = d3
@@ -101,17 +101,19 @@ const line = d3
 svg
   .append("g")
   .attr("transform", "translate(0," + height + ")")
-  .call(d3.axisBottom(xScale).ticks(20).tickFormat(d3.format("d")));
+  .call(d3.axisBottom(xScale).ticks(20).tickFormat(d3.format("d")))
+  .style("font-size", "14px");
 
 // Add y-axis label
 svg
   .append("text")
   .attr("transform", "rotate(-90)")
-  .attr("y", 0 - margin.left)
+  .attr("y", 20 - margin.left)
   .attr("x", 0 - height / 2)
   .attr("dy", "1em")
   .style("text-anchor", "middle")
-  .text("Waste generated in million tonnes");
+  .style("font-size", "20px")
+  .text("Plastic generated in million tonnes");
 
 // Add x-axis label
 svg
@@ -121,7 +123,8 @@ svg
   .style("text-anchor", "middle")
   .text("Year");
 
-svg.append("g").call(d3.axisLeft(yScale));
+svg.append("g").call(d3.axisLeft(yScale))
+.style("font-size", "14px");;
 
 // Add the line to the chart
 svg
@@ -129,7 +132,7 @@ svg
   .datum(data1)
   .attr("fill", "none")
   .attr("stroke", "cyan")
-  .attr("stroke-width", 4)
+  .attr("stroke-width", 6)
   .attr("d", line);
 
 svg
@@ -139,7 +142,7 @@ svg
   .append("circle")
   .attr("cx", (d) => xScale(d.year))
   .attr("cy", (d) => yScale(d.value))
-  .attr("r", 4) // radius of the circle
+  .attr("r", 6) // radius of the circle
   .attr("fill", "steelblue")
   .attr("opacity", 0)
   .on("mouseover", handleMouseOver)
