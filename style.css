@@ -5,12 +5,14 @@
   background-image: url("https://www.condorferries.co.uk/remote.axd/condorlivemedia.azureedge.net/media/11088/plastic-in-the-ocean.jpg?anchor=center&amp;mode=crop&amp;width=1920&amp;height=1080&amp;rnd=132215866990000000");
   background-color: cornflowerblue; /*hvis baggrundsbilledet failer*/
   background-size: cover;
+  margin: -0.5%;
 }
 
 /* Skrifttype til overskrift */
 h1 {
   padding-top: 60px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-top: -2%;
 }
 
 /* Skrifttype til underrubrik */
@@ -29,6 +31,7 @@ h2 {
   margin-right: 400px;
   text-align: center;
   padding-bottom: 100px;
+  padding-top: 50px;
 }
 
 /* Billede af garbage patch indsættes og rettes til */
