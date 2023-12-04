@@ -44,81 +44,61 @@ h2 {
   font-weight: bold;
 }
 
-/* Visualisering 1 placeres til højre på hjemmesiden */
-.vis1 {
-  float: right;
-  box-sizing: border-box;
-  padding: 20px; /* Padding efter behov */
+/* Flexbox layout */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-/* Overskrift og teksten til visualisering 1 placeres ved siden af, på venstre side af visualiseringen */
-.tekstvis1 {
-  width: 50%;
-  float: right;
-  box-sizing: border-box;
-  padding: 20px; /* Padding efter behov */
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Space between rows */
 }
 
-/* Billede af garbage patch indsættes og rettes til så det placeres på venstre side */
-.garbage {
-  height: 300px;
-  width: 500px;
-  background-image: url("https://imageio.forbes.com/blogs-images/scottsnowden/files/2019/05/GreatPacificGarbagePatch.jpg?format=jpg&width=1440");
-  background-size: cover;
-  float: left;
-  margin-left: 6.5%;
-  clear: both; /* Forindre at float-elementer flyder sammen */
-}
-
-/* Tekst til garbage patch placeres ved siden af, på højre side af billedet */
+.vis1,
+.vis2,
+.vis3,
+.garbage,
+.tekstvis1,
+.tekstvis2,
+.tekstvis3,
 .tekstgarbage {
-  width: 50%;
-  float: left;
-  padding: 20px; /* Gælder fra venstre af, af billedet */
+  flex-basis: calc(50% - 20px); /* Danner 3 kolonner med 20px afstand */
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 /* Faktaboks for visualisering 1 */
 .tekstvis1.faktaboks {
-  border: 5px solid aquamarine;
-  padding: 10px; /* Afstand inden for kassen */
   background-color: lightcyan;
-  margin-bottom: 20px; /* Afstand under kassen */
-  margin-top: 50px;
-  width: 20%; /* Ændrer bredden af faktaboksen */
-  margin-right: 10px; /* Margin til højre for at skabe afstand mellem boksen og resten af indholdet */
+  border: 5px solid aquamarine;
+  width: 200px;
+  height: 200px;
+}
+/* Faktaboks for garbage patch */
+.tekstgarbage.faktaboks {
+  background-color: lightcyan;
+  border: 5px solid aquamarine;
+  width: 200px;
+  height: 250px;
 }
 
 /* Faktaboks for visualisering 2 */
 .tekstvis2.faktaboks {
-  border: 5px solid aquamarine;
-  padding: 10px;
   background-color: lightcyan;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  width: 20%;
-  margin-right: 10px;
-}
-
-/* Faktaboks for garbage patch */
-.tekstgarbage.faktaboks {
   border: 5px solid aquamarine;
-  padding: 10px;
-  background-color: lightcyan;
-  margin-bottom: 20px;
-  margin-top: 40px;
-  margin-left: 40px;
-  width: 20%;
+  width: 200px;
+  height: 250px;
 }
 
 /* Faktaboks for visualisering 3 */
 .tekstvis3.faktaboks {
-  border: 5px solid aquamarine;
-  padding: 10px;
   background-color: lightcyan;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  width: 20%;
-  margin-right: 10px;
+  border: 5px solid aquamarine;
+  width: 200px;
+  height: 250px;
 }
 
 #tooltip {
