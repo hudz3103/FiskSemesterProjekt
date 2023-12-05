@@ -414,7 +414,7 @@ fetch("http://localhost:3000/plastic")
   });
 
   function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
+    let reveals = document.querySelectorAll(".reveal");
  
     for (let i = 0; i < reveals.length; i++) {
       let windowHeight = window.innerHeight;
