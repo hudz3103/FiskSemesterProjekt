@@ -13,26 +13,36 @@ body {
   background-image: linear-gradient(#24b5a9, rgb(20, 118, 199));
 }
 
-/* Skrifttype til overskrift */
+/* Overskrift: Plast fra Land til Vand */
 h1 {
   padding-top: 60px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-top: -2%;
 }
 
-/* Skrifttype til underrubrik */
-h2 {
+/* Underubrik: "En tikkende bombe for vores planet" og
+tekst til visualiseriner/garbage patch*/
+h2,
+h3 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-/* Baggrundsfarve på overskriften: "Hvad sker der lige med plastik?" */
-.introtekst {
-  background-color: aquamarine;
-}
+/* Overskrift: "Hvor meget af vores plast ender i vores have?" og "Hvor meget plast producerer vi?" */
 h4 {
   background-color: aquamarine;
   font-size: larger;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+
+/* Overskrift til vis1: Plast udviklingen siden 1950 */
+h5 {
+  font-size: large;
+  position: absolute;
+  left: 65%;
+  margin-bottom: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 /* Introteksten indsættes og placeres i midten */
 .intro {
   margin-left: 400px;
@@ -40,13 +50,6 @@ h4 {
   text-align: center;
   padding-bottom: 0px;
   padding-top: 50px;
-}
-
-h5 {
-  font-size: large;
-  position: absolute;
-  left: 65%;
-  margin-bottom: 100px;
 }
 
 /* Billede af garbage patch indsættes og rettes til */
@@ -58,7 +61,7 @@ h5 {
   float: right;
 }
 
-/* Teksten bliver fed */
+/* Ord i introtekst bliver fed */
 .intro span {
   font-weight: bold;
 }
@@ -191,7 +194,7 @@ h5 {
 @keyframes fall1 {
   100% {
     opacity: 1;
-    transform: translateY(540vh) rotate(90deg); /* Hvor langt ned på siden billedet skal falde og rotation af billedet */
+    transform: translateY(650vh) rotate(90deg); /* Hvor langt ned på siden billedet skal falde og rotation af billedet */
   }
 }
 
@@ -211,7 +214,7 @@ h5 {
 @keyframes fall2 {
   100% {
     opacity: 1;
-    transform: translateY(540vh) rotate(-90deg);
+    transform: translateY(650vh) rotate(-90deg);
   }
 }
 /* Venstre: Animation 3 - Plastik flaske */
@@ -230,7 +233,7 @@ h5 {
 @keyframes fall3 {
   100% {
     opacity: 1;
-    transform: translateY(540vh) rotate(90deg);
+    transform: translateY(650vh) rotate(90deg);
   }
 }
 
@@ -250,7 +253,7 @@ h5 {
 @keyframes fall4 {
   100% {
     opacity: 1;
-    transform: translateY(540vh) rotate(-90deg);
+    transform: translateY(650vh) rotate(-90deg);
   }
 }
 
@@ -270,6 +273,6 @@ h5 {
 @keyframes fall5 {
   100% {
     opacity: 1;
-    transform: translateY(540vh) rotate(90deg);
+    transform: translateY(650vh) rotate(90deg);
   }
 }
