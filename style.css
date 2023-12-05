@@ -191,9 +191,7 @@ h5 {
 @keyframes fall1 {
   100% {
     opacity: 1;
-    transform: translateY(
-      540vh
-    ); /* Hvor langt ned på siden billedet skal falde */
+    transform: translateY(540vh) rotate(90deg); /* Hvor langt ned på siden billedet skal falde og rotation af billedet */
   }
 }
 
@@ -213,7 +211,7 @@ h5 {
 @keyframes fall2 {
   100% {
     opacity: 1;
-    transform: translateY(540vh) rotate(90deg);
+    transform: translateY(540vh) rotate(-90deg);
   }
 }
 /* Venstre: Animation 3 - Plastik flaske */
@@ -232,7 +230,7 @@ h5 {
 @keyframes fall3 {
   100% {
     opacity: 1;
-    transform: translateY(540vh);
+    transform: translateY(540vh) rotate(90deg);
   }
 }
 
@@ -252,7 +250,7 @@ h5 {
 @keyframes fall4 {
   100% {
     opacity: 1;
-    transform: translateY(540vh) rotate(90deg);
+    transform: translateY(540vh) rotate(-90deg);
   }
 }
 
