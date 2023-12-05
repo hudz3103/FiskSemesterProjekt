@@ -276,3 +276,21 @@ h5 {
     transform: translateY(650vh) rotate(90deg);
   }
 }
+
+.fadingInside {
+  opacity: 0;
+
+  /* Add animation properties */
+  animation: fadeIn 2s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
