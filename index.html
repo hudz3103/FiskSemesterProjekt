@@ -62,83 +62,128 @@
       </p>
     </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
     <!-- Wrapper dækker over hele sektionen hvor der er div'er inde i en div -->
-    <div class="flex-container">
-      <div class="wrapper flex-container reveal">
-        <!-- Overskrift og brødtekst til visualisering 1 -->
-        <div class="tekstvis1 faktaboks">
-          <h3>Plast produceret</h3>
-          <p class="faktaboks">
-            Grafen viser, hvordan vi eksponentielt har produceret mere plastik
-            hvert år siden 1950.
-            <br />
-            <br />
-            Hold musen over grafen for at se mængden af plast produceret i et
-            specifikt år.
-          </p>
-        </div>
-        <!-- Visualisering 1 -->
-        <div class="vis1">
-          <h5>Plast udviklingen siden 1950</h5>
-        </div>
+    <div class="wrapper flex-container reveal">
+      <!-- Overskrift og brødtekst til visualisering 1 -->
+      <div class="tekstvis1 faktaboks">
+        <h3>Plast produceret</h3>
+        <p class="faktaboks">
+          Grafen viser, hvordan vi eksponentielt har produceret mere plastik
+          hvert år siden 1950.
+          <br />
+          <br />
+          Hold musen over grafen for at se mængden af plast produceret i et
+          specifikt år.
+        </p>
+      </div>
+      <!-- Visualisering 1 -->
+      <div class="vis1">
+        <h5>Plast udviklingen siden 1950</h5>
+      </div>
+    </div>
+
+    <div class="intro">
+      <h4 class="introtekst">Garbage patch</h4>
+      <p class="introtekst2">
+        “The Great Pacific Garbage Patch” er en affaldssamling i det nordlige
+        Stillehav. Det er en stor samling af havaffald, primært mikroplast. Det
+        er svært at måle områdets præcise størrelse, men 80% af plastikken
+        stammer fra landbaserede kilder. Mikroplast er en trussel både for os
+        mennesker og for havdyr.
+      </p>
+    </div>
+
+    <div class="wrapper flex-container">
+      <!-- Garbage patch billede -->
+      <div class="garbage"></div>
+      <!-- Overskrift og brødtekst til garbage patch -->
+      <div class="tekstgarbage faktaboks">
+        <h3>Garbage Patch</h3>
+        <p>
+          "The Great Pacific Garbage Patch” er en affaldssamling i det nordlige
+          Stillehav. Det er en stor samling af havaffald, primært mikroplast.
+          Det er svært at måle områdets præcise størrelse, men 80% af plastikken
+          stammer fra landbaserede kilder. Mikroplast er en trussel både for os
+          mennesker og for havdyr.
+        </p>
+      </div>
+    </div>
+
+    <div class="intro">
+      <h4 class="introtekst">
+        I hvilke lande, rundt om i verden, er indbyggerne værst til at få plast
+        ud i havene?
+      </h4>
+      <p class="introtekst2">
+        For at bekæmpe plastforurening er det afgørende at håndtere affald
+        korrekt. Cirka 20% af plast bliver stadig ikke håndteret korrekt,
+        hvilket betyder, at det hverken genanvendes, forbrændes eller deponeres
+        på lossepladser.
+        <br />
+        <br />
+        Mængden af uhåndteret plastaffald varierer globalt, men det er generelt
+        højere i lav- til mellemindkomstlande. Det er vigtigt, at nationale
+        myndigheder implementerer politikker for at forbedre
+        affaldshåndteringen, eventuelt med støtte fra mere velstående lande.
+        <br />
+        <br />Når affald ikke håndteres korrekt, ender en del af det i havet.
+        Plasten, der ender i havet, har en skadelig indvirkning på marinelivet,
+        hvilket igen påvirker os, da vi er afhængige af havmiljøet.
+      </p>
+    </div>
+
+    <div class="wrapper flex-container">
+      <!-- Overskrift og brødtekst til visualisering 2 -->
+      <div class="tekstvis2 faktaboks">
+        <h3>Plast håndtering i verden</h3>
+        <p>
+          Identificér på modellen hvilke lande, der håndterer plast dårligt. De
+          lande som gør det værst pr. indbygger, inkluderer blandt andet:
+          <li>Philippinerne med 3.2 kg pr indbygger</li>
+          <li>Suriname med 2,88 kg pr indbygger</li>
+          <li>Trinidad og Tobago 2,53 kg pr indbygger</li>
+          <br />
+          Desto større circkel, desto mere plast slipper ud i havene pr
+          indbygger. <br />Hold musen over for at se præcise værdier for
+          indbyggerne.
+        </p>
       </div>
 
-      <div class="wrapper flex-container reveal">
-        <!-- Garbage patch billede -->
-        <div class="garbage"></div>
-        <!-- Overskrift og brødtekst til garbage patch -->
-        <div class="tekstgarbage faktaboks">
-          <h3>Garbage Patch</h3>
-          <p>
-            "The Great Pacific Garbage Patch” er en affaldssamling i det
-            nordlige Stillehav. Det er en stor samling af havaffald, primært
-            mikroplast. Det er svært at måle områdets præcise størrelse, men 80%
-            af plastikken stammer fra landbaserede kilder. Mikroplast er en
-            trussel både for os mennesker og for havdyr.
-          </p>
-        </div>
+      <!-- Visualisering 2 -->
+      <div class="vis2">
+        <svg id="vis2"></svg>
+        <div id="tooltip"></div>
       </div>
+    </div>
 
-      <div class="wrapper flex-container">
-        <!-- Overskrift og brødtekst til visualisering 2 -->
-        <div class="tekstvis2 faktaboks reveal">
-          <h3>Circular packing</h3>
-          <p>
-            Det er vigtigt at affaldet bliver håndteret korrekt. Det er ikke
-            bare statens opgave, men alle har et individuelt ansvar. Man kan se
-            hvor meget de enkelte indbyggere fejlhåndterer deres affald. Jo
-            større boblen er jo ringere er de til at håndtere deres affald. STOR
-            BOBBEL DÅRLIG; LILLE BOBBEL GOD.
-          </p>
-        </div>
-        <!-- Visualisering 2 -->
-        <div class="vis2">
-          <svg id="vis2"></svg>
-          <div id="tooltip"></div>
-        </div>
-      </div>
+    <div class="intro">
+      <h4 class="introtekst">
+        Hvor meget plast ender i havet på verdensplan om året?
+      </h4>
+      <p class="introtekst2">
+        Der produceres cirka 353 millioner tons plastik hvert år, og dette tal
+        fortsætter med at stige. På grund af manglende korrekt håndtering af
+        affald ender omkring 6 millioner tons plastik årligt i verdenshavene.
+        Det er derfor afgørende, at affald håndteres mere effektivt på globalt
+        plan.
+      </p>
+    </div>
 
-      <div class="wrapper flex-container reveal">
-        <!-- Visualisering 3 -->
-        <div class="vis3"></div>
-        <!-- Overskrift og brødtekst til visualisering  -->
-        <div class="tekstvis3 faktaboks">
-          <h3>Bubble plot</h3>
-          <p>Tekst til visualisering 3</p>
-        </div>
+    <div class="wrapper flex-container">
+      <!-- Visualisering 3 -->
+      <div class="vis3"></div>
+
+      <!-- Overskrift og brødtekst til visualisering  -->
+      <div class="tekstvis3 faktaboks">
+        <h3>Hvor meget er 6 Mio. ton egentligt?</h3>
+        <p>
+          Når du holder musen over de forskellige farver på cirklen, får du
+          viden om, hvor mange tons plastic der forsvinder de forskellige steder
+          hen. <br />
+          <br />
+          Eksempelvis er det svært at forestille sig, at de 6 mio ton plast i
+          havene om året, svarer til 16 Empire state buildings.
+        </p>
       </div>
     </div>
 

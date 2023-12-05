@@ -50,6 +50,8 @@ h5 {
   text-align: center;
   padding-bottom: 0px;
   padding-top: 50px;
+  margin-bottom: 100px;
+  font-size: 20px;
 }
 
 /* Billede af garbage patch indsættes og rettes til */
@@ -59,6 +61,7 @@ h5 {
   background-image: url("https://imageio.forbes.com/blogs-images/scottsnowden/files/2019/05/GreatPacificGarbagePatch.jpg?format=jpg&width=1440");
   background-size: cover;
   float: right;
+  margin-top: 100px;
 }
 
 /* Ord i introtekst bliver fed */
@@ -66,18 +69,14 @@ h5 {
   font-weight: bold;
 }
 
-/* Flexbox layout */
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .wrapper {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 300px; /* Space between rows */
+  margin-bottom: 200px; /* Space between rows */
   margin-top: -2%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .vis_intro {
@@ -123,35 +122,6 @@ h5 {
 
 /* Faktaboks for garbage patch */
 .tekstgarbage.faktaboks {
-  background-color: lightcyan;
-  width: 200px;
-  height: 250px;
-  margin: 50px;
-}
-
-/* Faktaboks for visualisering 2 */
-.tekstvis2.faktaboks {
-  position: relative; /* Establishes a positioning context for absolute positioning */
-  width: 800px;
-  height: 400px;
-  font-size: larger;
-  border-radius: 50%; /* Make it circular */
-  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-  justify-content: center;
-  align-items: center;
-  background-color: cyan; /* Background color */
-  margin-top: 250px;
-  margin-left: 100px;
-}
-
-.tekstvis2.faktaboks h3 {
-  margin-top: -20px; /* Lift the text up by 20 pixels */
-}
-
-/* Faktaboks for visualisering 3 */
-.tekstvis3.faktaboks {
   position: relative; /* Establishes a positioning context for absolute positioning */
   width: 300px;
   height: 300px;
@@ -164,8 +134,55 @@ h5 {
   justify-content: center;
   align-items: center;
   background-color: cyan; /* Background color */
+  margin-top: 100px;
+  margin-left: 100px;
+  text-align: center;
+}
+
+.tekstgarbage.faktaboks h3 {
+  margin-top: -10px; /* Lift the text up by 20 pixels */
+}
+
+/* Faktaboks for visualisering 2 */
+.tekstvis2.faktaboks {
+  position: relative; /* Establishes a positioning context for absolute positioning */
+  width: 500px;
+  height: 450px;
+  font-size: larger;
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: cyan; /* Background color */
   margin-top: 200px;
   margin-left: 100px;
+  text-align: center;
+}
+
+.tekstvis2.faktaboks h3 {
+  margin-top: -10px; /* Lift the text up by 20 pixels */
+  margin-bottom: 0;
+}
+
+/* Faktaboks for visualisering 3 */
+.tekstvis3.faktaboks {
+  position: relative; /* Establishes a positioning context for absolute positioning */
+  width: 540px;
+  height: 420px;
+  margin: 50px;
+  font-size: larger;
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: cyan; /* Background color */
+  margin-top: 200px;
+  margin-left: 100px;
+  text-align: center;
 }
 
 #tooltip {
