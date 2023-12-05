@@ -173,4 +173,66 @@ h5 {
   font-size: 14px;
   opacity: 0; /* Initially hidden */
   pointer-events: none; /* Avoid blocking mouse events on the tooltip itself */
+
+  /* Animation 1 */
+  .animation1 {
+    position: absolute;
+    top: 0px; /* Hvor animationen skal starte */
+    left: 5%; /* Placering af animationen */
+    width: 150px; /* Juster størrelsen på billedet */
+    height: 150px;
+    background-image: url("https://cdn2.iconfinder.com/data/icons/garbage-and-waste/500/SingleCartoonTrashAndGarbageYulia_7-512.png");
+    background-size: contain;
+    animation: fall 11s ease forwards;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall {
+    100% {
+      opacity: 1;
+      transform: translateY(
+        540vh
+      ); /* Hvor langt ned på siden billedet skal falde */
+    }
+  }
+
+  /* Animation 2*/
+  .animation2 {
+    position: absolute;
+    top: 0px;
+    left: 85%; /* Juster efter dit design */
+    width: 150px;
+    height: 150px;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/023/870/319/original/plastic-bag-pollution-environmental-protection-vinyl-disposable-eco-bag-arrondissement-shopping-3d-international-plastic-bag-free-day-png.png");
+    background-size: contain;
+    animation: fall2 12s ease forwards;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall2 {
+    100% {
+      opacity: 1;
+      transform: translateY(540vh);
+    }
+  }
+
+  /* Animation 3*/
+  .animation3 {
+    position: absolute;
+    top: 0px;
+    left: 75%;
+    width: 150px;
+    height: 150px;
+    background-image: url("https://cdn1.iconfinder.com/data/icons/usa-cartoon-2/512/g16065-512.png");
+    background-size: contain;
+    animation: fall3 12s ease forwards;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall3 {
+    100% {
+      opacity: 1;
+      transform: translateY(540vh);
+    }
+  }
 }
