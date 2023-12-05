@@ -113,7 +113,7 @@ svg
   .attr("dy", "1em")
   .style("text-anchor", "middle")
   .style("font-size", "20px")
-  .text("Plastic generated in million tonnes");
+  .text("Plast i millioner ton");
 
 // Add x-axis label
 svg
@@ -123,8 +123,7 @@ svg
   .style("text-anchor", "middle")
   .text("Year");
 
-svg.append("g").call(d3.axisLeft(yScale))
-.style("font-size", "14px");;
+svg.append("g").call(d3.axisLeft(yScale)).style("font-size", "14px");
 
 // Add the line to the chart
 svg

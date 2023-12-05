@@ -29,14 +29,24 @@ h2 {
 .introtekst {
   background-color: aquamarine;
 }
-
+h4 {
+  background-color: aquamarine;
+  font-size: larger;
+}
 /* Introteksten indsættes og placeres i midten */
 .intro {
   margin-left: 400px;
   margin-right: 400px;
   text-align: center;
-  padding-bottom: 100px;
+  padding-bottom: 0px;
   padding-top: 50px;
+}
+
+h5 {
+  font-size: large;
+  position: absolute;
+  left: 65%;
+  margin-bottom: 100px;
 }
 
 /* Billede af garbage patch indsættes og rettes til */
@@ -64,6 +74,12 @@ h2 {
   display: flex;
   justify-content: space-around;
   margin-bottom: 300px; /* Space between rows */
+  margin-top: -2%;
+}
+
+.vis_intro {
+  font-size: large;
+  font-family: Cambria;
 }
 
 .vis1,
@@ -95,10 +111,11 @@ h2 {
   background-color: cyan; /* Background color */
   margin-top: 200px;
   margin-left: 100px;
+  text-align: center;
 }
 
 .tekstvis1.faktaboks h3 {
-  margin: 0; /* Remove default margin for the heading */
+  margin: -10px; /* Remove default margin for the heading */
 }
 
 /* Faktaboks for garbage patch */
@@ -147,8 +164,6 @@ h2 {
   margin-top: 200px;
   margin-left: 100px;
 }
-
-
 
 #tooltip {
   position: absolute;
