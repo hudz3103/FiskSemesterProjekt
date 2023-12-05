@@ -173,66 +173,105 @@ h5 {
   font-size: 14px;
   opacity: 0; /* Initially hidden */
   pointer-events: none; /* Avoid blocking mouse events on the tooltip itself */
+}
 
-  /* Animation 1 */
-  .animation1 {
-    position: absolute;
-    top: 0px; /* Hvor animationen skal starte */
-    left: 5%; /* Placering af animationen */
-    width: 150px; /* Juster størrelsen på billedet */
-    height: 150px;
-    background-image: url("https://cdn2.iconfinder.com/data/icons/garbage-and-waste/500/SingleCartoonTrashAndGarbageYulia_7-512.png");
-    background-size: contain;
-    animation: fall 11s ease forwards;
-    animation-iteration-count: infinite;
+/* Højre: Animation 1 - Plastik pose*/
+.animation1 {
+  position: absolute;
+  top: 0px; /* Placering af billedet, og hvor animationen skal starte fra toppen og højre */
+  right: 5%;
+  width: 150px; /* Bredde og højde på billedet */
+  height: 150px;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/023/870/319/original/plastic-bag-pollution-environmental-protection-vinyl-disposable-eco-bag-arrondissement-shopping-3d-international-plastic-bag-free-day-png.png");
+  background-size: contain;
+  animation: fall1 12s ease forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall1 {
+  100% {
+    opacity: 1;
+    transform: translateY(
+      540vh
+    ); /* Hvor langt ned på siden billedet skal falde */
   }
+}
 
-  @keyframes fall {
-    100% {
-      opacity: 1;
-      transform: translateY(
-        540vh
-      ); /* Hvor langt ned på siden billedet skal falde */
-    }
+/* Højre: Animation 2 - Rød kop */
+.animation2 {
+  position: absolute;
+  top: 0px;
+  right: 25%;
+  width: 100px;
+  height: 100px;
+  background-image: url("https://tr.rbxcdn.com/5e5bdb4721aec0166497a396d1bfdbb6/420/420/Hat/Png");
+  background-size: contain;
+  animation: fall2 13s ease forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall2 {
+  100% {
+    opacity: 1;
+    transform: translateY(540vh) rotate(90deg);
   }
+}
+/* Venstre: Animation 3 - Plastik flaske */
+.animation3 {
+  position: absolute;
+  top: 0px;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background-image: url("https://cdn2.iconfinder.com/data/icons/garbage-and-waste/500/SingleCartoonTrashAndGarbageYulia_7-512.png");
+  background-size: contain;
+  animation: fall3 13s ease forwards;
+  animation-iteration-count: infinite;
+}
 
-  /* Animation 2*/
-  .animation2 {
-    position: absolute;
-    top: 0px;
-    left: 85%; /* Juster efter dit design */
-    width: 150px;
-    height: 150px;
-    background-image: url("https://static.vecteezy.com/system/resources/previews/023/870/319/original/plastic-bag-pollution-environmental-protection-vinyl-disposable-eco-bag-arrondissement-shopping-3d-international-plastic-bag-free-day-png.png");
-    background-size: contain;
-    animation: fall2 12s ease forwards;
-    animation-iteration-count: infinite;
+@keyframes fall3 {
+  100% {
+    opacity: 1;
+    transform: translateY(540vh);
   }
+}
 
-  @keyframes fall2 {
-    100% {
-      opacity: 1;
-      transform: translateY(540vh);
-    }
+/*  Venstre: Animation 4 - To go kop */
+.animation4 {
+  position: absolute;
+  top: 0px;
+  left: 15%;
+  width: 100px;
+  height: 100px;
+  background-image: url("https://png.pngtree.com/png-vector/20220606/ourmid/pngtree-plastic-coffee-tea-cup-icon-png-image_4870166.png");
+  background-size: contain;
+  animation: fall4 12s ease forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall4 {
+  100% {
+    opacity: 1;
+    transform: translateY(540vh) rotate(90deg);
   }
+}
 
-  /* Animation 3*/
-  .animation3 {
-    position: absolute;
-    top: 0px;
-    left: 75%;
-    width: 150px;
-    height: 150px;
-    background-image: url("https://cdn1.iconfinder.com/data/icons/usa-cartoon-2/512/g16065-512.png");
-    background-size: contain;
-    animation: fall3 12s ease forwards;
-    animation-iteration-count: infinite;
-  }
+/*  Venstre: Animation 5 - Ansigtsmaske */
+.animation5 {
+  position: absolute;
+  top: 0px;
+  left: 25%;
+  width: 100px;
+  height: 100px;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/014/323/953/small/white-medical-face-mask-png.png");
+  background-size: contain;
+  animation: fall5 15s ease forwards;
+  animation-iteration-count: infinite;
+}
 
-  @keyframes fall3 {
-    100% {
-      opacity: 1;
-      transform: translateY(540vh);
-    }
+@keyframes fall5 {
+  100% {
+    opacity: 1;
+    transform: translateY(540vh) rotate(90deg);
   }
 }
