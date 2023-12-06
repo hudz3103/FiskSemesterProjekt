@@ -208,7 +208,7 @@ const svg3 = d3
 //svg3.call(zoom); */den fucker med scroll funktionen
 
 // Create a group for the circles and labels
-const group = svg3.append("g").attr("transform", "translate(500, 440)"); // Centered translation
+const group = svg3.append("g").attr("transform", "translate(500, 400)"); // Centered translation
 
 const customColors = ["#b0c4de", "#4682b4", "#4169e1", "#00008b"];
 
