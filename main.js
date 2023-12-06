@@ -203,7 +203,7 @@ const svg3 = d3
   .attr("height", 800); // Increased height;
 
 // Define the zoom behavior
-const zoom = d3.zoom().scaleExtent([1, 8]).on("zoom", zoomed);
+//const zoom = d3.zoom().scaleExtent([1, 8]).on("zoom", zoomed);
 
 //svg3.call(zoom); */den fucker med scroll funktionen
 
@@ -223,12 +223,13 @@ const circles = group
   })
   .attr("fill", (d, i) => d3.schemeCategory10[i])
   .attr("fill", (d, i) => customColors[i])
-  .on("click", clicked)
+  //.on("click", clicked)
   .on("mouseover", mouseover)
   .on("mouseout", mouseout);
 
 //let zoomedIn = false;
 
+/*
 // Zoom function (selvom vi har fjernet zoom, så virker koden ikke, hvis vi sletter det her)
 function zoomed() {
   group.attr("transform", d3.event.transform);
@@ -237,7 +238,7 @@ function zoomed() {
 // Click event handler
 function clicked() {
   const clickedCircle = d3.select(this);
-}
+}*/
 /*
   // Toggle between zooming in and zooming out
   if (!zoomedIn) {
