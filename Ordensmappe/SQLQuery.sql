@@ -38,6 +38,14 @@ CREATE TABLE plastic_pollution
 );
 
 
+ALTER TABLE plastic_pollution
+ADD COLUMN rounded_mismanaged numeric;
+
+
+UPDATE plastic_pollution
+SET rounded_mismanaged = ROUND(mismanaged, 3);
+
+
 
 
 
