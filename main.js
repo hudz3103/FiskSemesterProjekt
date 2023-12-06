@@ -413,7 +413,8 @@ fetch("http://localhost:3000/plastic")
       .attr("y", (d) => d.y)
       .attr("dy", "0.3em")
       .attr("text-anchor", "middle")
-      .text((d) => d.data.country);
+      .text((d) => d.data.country)
+      .style("pointer-events","none"); //gør at musen ikke reagerer på teksten i boblerne;
   })
   .catch((error) => {
     // Handle errors during the fetch
