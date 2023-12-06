@@ -17,7 +17,7 @@ const klient = new Client({
 });
 
 app.use(cors());
-const qry = "SELECT entity,code, mismanaged from plastic_pollution";
+const qry = "SELECT entity,code, rounded_mismanaged from plastic_pollution";
 klient.connect();
 app.get("/plastic", async (req, res) => {
   try {

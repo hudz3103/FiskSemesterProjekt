@@ -318,6 +318,7 @@ fetch("http://localhost:3000/plastic")
     // Log the data to the console
     console.log(data);
     data2 = data;
+
     console.log(data2); //Data kommer ind i vores data2 array
 
     //Vi filtrere data sådan at kontinenter også får et navn istedet for at de står blanke
@@ -330,7 +331,8 @@ fetch("http://localhost:3000/plastic")
       console.log(dataCode);
 
       if (data2.foods[i].code == null) {
-        data2.foods[i].code = dataEntity;
+        //data2.foods[i].code = dataEntity;
+        data2.foods[i].rounded_mismanaged = 0; //Det gør vi for at slette den senere
         console.log("This is not a country! " + dataEntity);
       } else {
         console.log("This is a country");
@@ -343,10 +345,10 @@ fetch("http://localhost:3000/plastic")
     const viz2data = {
       name: "root",
       children: data2.foods
-        .filter((row) => row.mismanaged !== 5) // Remove nodes with a value of 0
+        .filter((row) => row.rounded_mismanaged !== 5) // Remove nodes with a value of 0
         .map((row) => ({
           country: row.code,
-          mismanaged: row.mismanaged,
+          rounded_mismanaged: row.rounded_mismanaged,
           entity: row.entity,
         })),
     };
@@ -355,8 +357,8 @@ fetch("http://localhost:3000/plastic")
     // Create a hierarchy from the data
     const root = d3
       .hierarchy(viz2data)
-      .sum((d) => d.mismanaged)
-      .sort((a, b) => b.mismanaged - a.mismanaged); // Sort nodes by mismanaged value
+      .sum((d) => d.rounded_mismanaged)
+      .sort((a, b) => b.rounded_mismanaged - a.rounded_mismanaged); // Sort nodes by mismanaged value
 
     // Assign the hierarchical data to the pack layout
     const packedData = pack(root);
@@ -367,7 +369,9 @@ fetch("http://localhost:3000/plastic")
     // Create circles for each node, excluding the root and nodes with mismanaged value less than 5
     const nodes = svg2
       .selectAll("circle")
-      .data(packedData.descendants().filter((d) => d.data.mismanaged >= 0.05)) // Filter out values less than 5
+      .data(
+        packedData.descendants().filter((d) => d.data.rounded_mismanaged >= 0.1)
+      ) // Filter out values less than 5
       .enter()
       .append("circle")
       .attr("cx", (d) => d.x)
@@ -386,7 +390,7 @@ fetch("http://localhost:3000/plastic")
 
       tooltip
         .html(
-          `<strong>Country:</strong> ${d.data.country}<br><strong>Entity:</strong> ${d.data.entity}<br><strong>Mismanaged kg/per person:</strong> ${d.data.mismanaged}`
+          `<strong>Landekode:</strong> ${d.data.country}<br><strong>Land:</strong> ${d.data.entity}<br><strong>Gns. plast i havet pr. person kg/år:</strong> ${d.data.rounded_mismanaged}`
         )
         .style("left", d3.event.pageX + "px")
         .style("top", d3.event.pageY - 28 + "px");
@@ -400,7 +404,9 @@ fetch("http://localhost:3000/plastic")
     // Optional: Add text labels
     svg2
       .selectAll("text") // Select from svg2, not svg
-      .data(packedData.descendants().filter((d) => d.data.mismanaged >= 0.05))
+      .data(
+        packedData.descendants().filter((d) => d.data.rounded_mismanaged >= 0.1)
+      )
       .enter()
       .append("text")
       .attr("x", (d) => d.x)
@@ -414,22 +420,20 @@ fetch("http://localhost:3000/plastic")
     console.error("Fetch error:", error);
   });
 
-  function reveal() {
-    let reveals = document.querySelectorAll(".reveal");
- 
-    for (let i = 0; i < reveals.length; i++) {
-      let windowHeight = window.innerHeight;
-      let elementTop = reveals[i].getBoundingClientRect().top;
-      let elementVisible = 150;
- 
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
+function reveal() {
+  let reveals = document.querySelectorAll(".reveal");
+
+  for (let i = 0; i < reveals.length; i++) {
+    let windowHeight = window.innerHeight;
+    let elementTop = reveals[i].getBoundingClientRect().top;
+    let elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
     }
   }
- 
-  window.addEventListener("scroll", reveal);
+}
 
- 
+window.addEventListener("scroll", reveal);
