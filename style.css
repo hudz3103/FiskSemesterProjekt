@@ -167,7 +167,7 @@ g {
 }
 
 .tekstvis2.faktaboks h3 {
-  margin-top: -10px; /* Lift the text up by 20 pixels */
+  margin-top: 0px; /* Lift the text up by 20 pixels */
   margin-bottom: 0;
 }
 
