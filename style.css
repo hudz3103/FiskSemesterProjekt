@@ -97,6 +97,20 @@ h5 {
   padding: 20px;
 }
 
+.vis3 {
+  flex-basis: calc(30% - 20px); /* Danner 3 kolonner med 20px afstand */
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+g {
+  align-items: center;
+}
+
 /* Faktaboks for visualisering 1 */
 .tekstvis1.faktaboks {
   position: relative; /* Establishes a positioning context for absolute positioning */
