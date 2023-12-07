@@ -5,7 +5,7 @@
   background-image: url("https://www.condorferries.co.uk/remote.axd/condorlivemedia.azureedge.net/media/11088/plastic-in-the-ocean.jpg?anchor=center&amp;mode=crop&amp;width=1920&amp;height=1080&amp;rnd=132215866990000000");
   background-color: cornflowerblue; /*hvis baggrundsbilledet failer*/
   background-size: cover;
-  margin: -0.5%;
+  margin: -0.45%;
 }
 
 body {
@@ -63,7 +63,6 @@ h5 {
   float: right;
   margin-top: 100px;
   border-radius: 15px;
-  
 }
 
 /* Ord i introtekst bliver fed */
@@ -98,7 +97,6 @@ h5 {
   box-sizing: border-box;
   padding: 20px;
 }
-
 
 g {
   align-items: center;
