@@ -115,7 +115,7 @@ svg
   .style("font-size", "20px")
   .text("Plast i millioner ton");
 
-// Add x-axis label
+// Add x-axis labeqxn
 svg
   .append("text")
   .attr("x", width / 2)
@@ -202,11 +202,6 @@ const svg3 = d3
   .attr("width", 1000) // Increased width
   .attr("height", 800); // Increased height;
 
-// Define the zoom behavior
-//const zoom = d3.zoom().scaleExtent([1, 8]).on("zoom", zoomed);
-
-//svg3.call(zoom); */den fucker med scroll funktionen
-
 // Create a group for the circles and labels
 const group = svg3.append("g").attr("transform", "translate(500, 400)"); // Centered translation
 
@@ -223,46 +218,9 @@ const circles = group
   })
   .attr("fill", (d, i) => d3.schemeCategory10[i])
   .attr("fill", (d, i) => customColors[i])
-  //.on("click", clicked)
   .on("mouseover", mouseover)
   .on("mouseout", mouseout);
 
-//let zoomedIn = false;
-
-/*
-// Zoom function (selvom vi har fjernet zoom, så virker koden ikke, hvis vi sletter det her)
-function zoomed() {
-  group.attr("transform", d3.event.transform);
-}
-
-// Click event handler
-function clicked() {
-  const clickedCircle = d3.select(this);
-}*/
-/*
-  // Toggle between zooming in and zooming out
-  if (!zoomedIn) {
-    // Zoom in on the clicked circle
-    group
-      .transition()
-      .duration(750)
-      .attr(
-        "transform",
-        `translate(${400 - clickedCircle.attr("cx")}, ${
-          400 - clickedCircle.attr("cy")
-        }) scale(8)`
-      );
-    zoomedIn = true;
-  } else {
-    // Zoom out to the original size
-    group
-      .transition()
-      .duration(750)
-      .attr("transform", "translate(400, 400) scale(1)");
-    zoomedIn = false;
-  }
-}
-*/
 // Mouseover event handler
 function mouseover(d, i) {
   const name = getNameFromIndex(data, i);
@@ -414,7 +372,7 @@ fetch("http://localhost:3000/plastic")
       .attr("dy", "0.3em")
       .attr("text-anchor", "middle")
       .text((d) => d.data.country)
-      .style("pointer-events","none"); //gør at musen ikke reagerer på teksten i boblerne;
+      .style("pointer-events", "none"); //gør at musen ikke reagerer på teksten i boblerne;
   })
   .catch((error) => {
     // Handle errors during the fetch
