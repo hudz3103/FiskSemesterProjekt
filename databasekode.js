@@ -18,11 +18,27 @@ const klient = new Client({
 
 app.use(cors());
 const qry = "SELECT entity,code, rounded_mismanaged FROM plastic_pollution";
-const qry2 = "SELECT entity,code, year FROM annual_prod";
+const qry2 = "SELECT year, scaled_prod_ton FROM annual_prod";
 klient.connect();
+
 app.get("/plastic", async (req, res) => {
   try {
     let queryData = await klient.query(qry);
+    res.json({
+      ok: true,
+      foods: queryData.rows,
+    });
+  } catch (error) {
+    res.json({
+      ok: false,
+      message: error.message,
+    });
+  }
+});
+
+app.get("/annualPlastic", async (req, res) => {
+  try {
+    let queryData = await klient.query(qry2);
     res.json({
       ok: true,
       foods: queryData.rows,
