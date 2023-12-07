@@ -37,13 +37,26 @@ CREATE TABLE plastic_pollution
     mismanaged numeric
 );
 
-
+/*Laver en ny colonne til de afrundede tal*/
 ALTER TABLE plastic_pollution
 ADD COLUMN rounded_mismanaged numeric;
 
-
+/*Også til vis2 */
 UPDATE plastic_pollution
 SET rounded_mismanaged = ROUND(mismanaged, 3);
+
+
+
+/*Vi tjekker hvordan det ville se ud før vi ændre data */
+SELECT plastic_prod_ton/1000000 FROM annual_prod;
+
+/*Vi lave en ny colonne til den scaleret værdi*/
+ALTER TABLE annual_prod
+ADD COLUMN scaled_prod_ton numeric;
+
+/*Også til vis2 */
+UPDATE annual_prod
+SET scaled_prod_ton = (plastic_prod_ton / 1000000);
 
 
 
