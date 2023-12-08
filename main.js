@@ -145,7 +145,7 @@ const svg3 = d3
   .attr("height", 800); // Increased height;
 
 // Create a group for the circles and labels
-const group = svg3.append("g").attr("transform", "translate(500, 400)"); // Centered translation
+const group = svg3.append("g").attr("transform", "translate(500, 400)"); // SVG visualiseringen skal starte fra midten
 
 const customColors = ["#b0c4de", "#4682b4", "#4169e1", "#00008b"];
 
@@ -155,7 +155,7 @@ const circles = group
   .enter()
   .append("circle")
   .attr("r", (d, i) => {
-    // Adjust the radius of the inner three circles
+    //Juster radius af de 3 cirkler
     return i !== 0 ? d * 2 : d;
   })
   .attr("fill", (d, i) => d3.schemeCategory10[i])
@@ -163,7 +163,7 @@ const circles = group
   .on("mouseover", mouseover)
   .on("mouseout", mouseout);
 
-// Mouseover event handler
+// Mouseover funktion til visualiseringen
 function mouseover(d, i) {
   const name = getNameFromIndex(data, i);
   const tooltip = svg3
@@ -175,14 +175,13 @@ function mouseover(d, i) {
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
 
-  // Update tooltip position on mousemove
+  //Opdatere teksten baseret på musens position
   svg3.on("mousemove", function () {
     const [x, y] = d3.mouse(this);
-    tooltip.attr("x", x).attr("y", y - 10); // Adjust the vertical position
+    tooltip.attr("x", x).attr("y", y - 10); //Justere dens position
   });
 }
-
-// Function to get the name from the nested JSON structure based on index
+// Funktion til at få navnet fra data baseret på index
 function getNameFromIndex(obj, index) {
   if (index === 0) {
     return obj.name;
