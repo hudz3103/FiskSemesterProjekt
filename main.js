@@ -227,20 +227,9 @@ fetch("http://localhost:3000/plastic")
       currentData = data2.foods[i]; //Vi behøver ikke at skrive data2.foods[i] om og om igen
       dataEntity = currentData.entity; //Country name
       dataCode = currentData.code; // Country code
-      //console.log(dataEntity);
-      //console.log(dataCode);
 
       if (data2.foods[i].code == null) {
-        //data2.foods[i].code = dataEntity;
         data2.foods[i].rounded_mismanaged = 0; //Det gør vi for at slette den senere
-        //console.log("This is not a country! " + dataEntity);
-      } else {
-        /*
-        console.log("This is a country");
-        console.log("Country is " + dataEntity);
-        console.log("Code is " + dataCode);
-        console.log("--");
-        */
       }
     }
 
@@ -265,7 +254,6 @@ fetch("http://localhost:3000/plastic")
     // Assign the hierarchical data to the pack layout
     const packedData = pack(root);
     // Select the circular packing SVG
-
     const svg2 = d3.select("#vis2").attr("width", 800).attr("height", 800);
 
     // Create circles for each node, excluding the root and nodes with mismanaged value less than 5
