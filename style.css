@@ -9,7 +9,6 @@
 }
 
 body {
-  /*background-color: lightcyan;  For browsers that do not support gradients */
   background-image: linear-gradient(#24b5a9, rgb(20, 118, 199));
 }
 
@@ -79,7 +78,7 @@ h5 {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 200px; /* Space between rows */
+  margin-bottom: 200px; /* afstanden mellem rækkerne */
   margin-top: -2%;
   display: flex;
   flex-wrap: wrap;
@@ -116,20 +115,20 @@ g {
   height: 300px;
   margin: 50px;
   font-size: larger;
-  border-radius: 50%; /* Make it circular */
-  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  border-radius: 50%; /* Laver faktaboksen cirkulær */
+  overflow: hidden; /* Gør at indholdet ikke flyder ud over cirklen */
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column; /* vertikal placering af tekstdelene*/
   justify-content: center;
   align-items: center;
-  background-color: cyan; /* Background color */
+  background-color: cyan; /* baggrundsfarve på faktaboks */
   margin-top: 150px;
   margin-left: 100px;
   text-align: center;
 }
 
 .tekstvis1.faktaboks h3 {
-  margin: -10px; /* Remove default margin for the heading */
+  margin: -10px; /*Adskiller overskriften og teksten i faktaboksen */
 }
 
 /* Faktaboks for garbage patch */
@@ -139,20 +138,20 @@ g {
   height: 300px;
   margin: 50px;
   font-size: larger;
-  border-radius: 50%; /* Make it circular */
-  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  border-radius: 50%; /* Gør boksen cirkulær */
+  overflow: hidden; /* Gør at indholdet ikke flyder ud over cirklen */
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column; /* vertikal placering af tekstdele */
   justify-content: center;
   align-items: center;
-  background-color: cyan; /* Background color */
+  background-color: cyan; /* baggrundsfarve på faktaboks */
   margin-top: 100px;
   margin-left: 100px;
   text-align: center;
 }
 
 .tekstgarbage.faktaboks h3 {
-  margin-top: -10px; /* Lift the text up by 20 pixels */
+  margin-top: -10px; /* løfter teksten op i boksen */
 }
 
 /* Faktaboks for visualisering 2 */
@@ -161,20 +160,20 @@ g {
   width: 500px;
   height: 450px;
   font-size: larger;
-  border-radius: 50%; /* Make it circular */
-  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  border-radius: 50%; /* Gør boksen cirkulær */
+  overflow: hidden; /* Gør at indholdet ikke flyder ud over cirklen */
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column; /* vertikal placering af tekstdele */
   justify-content: center;
   align-items: center;
-  background-color: cyan; /* Background color */
+  background-color: cyan; /* baggrundsfarve på faktaboks */
   margin-top: 200px;
   margin-left: 100px;
   text-align: center;
 }
 
 .tekstvis2.faktaboks h3 {
-  margin-top: 0px; /* Lift the text up by 20 pixels */
+  margin-top: 0px; 
   margin-bottom: 0;
 }
 
@@ -204,7 +203,7 @@ g {
   padding: 10px;
   font-size: 14px;
   opacity: 0; /* Initially hidden */
-  pointer-events: none; /* Avoid blocking mouse events on the tooltip itself */
+  pointer-events: none; /* Musen forbliver uændret, når den går over tekst */
 }
 
 /* Højre: Animation 1 - Plastik pose*/
