@@ -110,7 +110,7 @@ g {
 
 /* Faktaboks for visualisering 1 */
 .tekstvis1.faktaboks {
-  position: relative; /* Establishes a positioning context for absolute positioning */
+  position: relative; /* Eventuelle børneelementerelementer vil blive positioneret absolut i forhold til det relevative element */
   width: 300px;
   height: 300px;
   margin: 50px;
@@ -133,18 +133,18 @@ g {
 
 /* Faktaboks for garbage patch */
 .tekstgarbage.faktaboks {
-  position: relative; /* Establishes a positioning context for absolute positioning */
+  position: relative;
   width: 300px;
   height: 300px;
   margin: 50px;
   font-size: larger;
-  border-radius: 50%; /* Gør boksen cirkulær */
-  overflow: hidden; /* Gør at indholdet ikke flyder ud over cirklen */
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
-  flex-direction: column; /* vertikal placering af tekstdele */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: cyan; /* baggrundsfarve på faktaboks */
+  background-color: cyan;
   margin-top: 100px;
   margin-left: 100px;
   text-align: center;
@@ -156,41 +156,41 @@ g {
 
 /* Faktaboks for visualisering 2 */
 .tekstvis2.faktaboks {
-  position: relative; /* Establishes a positioning context for absolute positioning */
+  position: relative;
   width: 500px;
   height: 450px;
   font-size: larger;
-  border-radius: 50%; /* Gør boksen cirkulær */
-  overflow: hidden; /* Gør at indholdet ikke flyder ud over cirklen */
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
-  flex-direction: column; /* vertikal placering af tekstdele */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: cyan; /* baggrundsfarve på faktaboks */
+  background-color: cyan;
   margin-top: 200px;
   margin-left: 100px;
   text-align: center;
 }
 
 .tekstvis2.faktaboks h3 {
-  margin-top: 0px; 
+  margin-top: 0px;
   margin-bottom: 0;
 }
 
 /* Faktaboks for visualisering 3 */
 .tekstvis3.faktaboks {
-  position: relative; /* Establishes a positioning context for absolute positioning */
+  position: relative;
   width: 540px;
   height: 420px;
   margin: 50px;
   font-size: larger;
-  border-radius: 50%; /* Make it circular */
-  overflow: hidden; /* Ensure content doesn't overflow outside the circle */
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
-  flex-direction: column; /* Stack children vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: cyan; /* Background color */
+  background-color: cyan;
   margin-top: 200px;
   margin-left: 100px;
   text-align: center;
@@ -202,7 +202,7 @@ g {
   border: 1px solid #ccc;
   padding: 10px;
   font-size: 14px;
-  opacity: 0; /* Initially hidden */
+  opacity: 1; /* Bestemmer gennemsigtigheden */
   pointer-events: none; /* Musen forbliver uændret, når den går over tekst */
 }
 
