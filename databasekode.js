@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors"); //Importere Cors
+const cors = require("cors"); //Importerer Cors (som gør det muligt at håndterer fra et andet websted)
 const app = express();
 const port = 3000;
 const { Client } = require("pg");
