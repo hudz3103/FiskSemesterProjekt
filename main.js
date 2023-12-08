@@ -204,9 +204,7 @@ function mouseout() {
   svg3.on("mousemove", null); // Remove the mousemove event listener
 }
 
-//
-let data2;
-// Fetch data from the server
+//Vi henter data ind fra serveren
 fetch("http://localhost:3000/plastic")
   .then((response) => {
     if (!response.ok) {
@@ -215,14 +213,11 @@ fetch("http://localhost:3000/plastic")
     return response.json();
   })
   .then((data) => {
-    // Log the data to the console
-    console.log(data);
-    data2 = data;
-
-    console.log(data2); //Data kommer ind i vores data2 array
+    const data2 = data;
+    //Vi tjekker om der kommer data ind
+    console.log(data2);
 
     //Vi filtrere data sådan at kontinenter også får et navn istedet for at de står blanke
-
     for (let i = 0; i < data2.foods.length; i++) {
       currentData = data2.foods[i]; //Vi behøver ikke at skrive data2.foods[i] om og om igen
       dataEntity = currentData.entity; //Country name
@@ -233,35 +228,34 @@ fetch("http://localhost:3000/plastic")
       }
     }
 
+    //Opsætning her skal bruges til circular packing
     const viz2data = {
       name: "root",
-      children: data2.foods
-        .filter((row) => row.rounded_mismanaged !== 5) // Remove nodes with a value of 0
-        .map((row) => ({
-          country: row.code,
-          rounded_mismanaged: row.rounded_mismanaged,
-          entity: row.entity,
-        })),
+      children: data2.foods.map((row) => ({
+        country: row.code,
+        rounded_mismanaged: row.rounded_mismanaged,
+        entity: row.entity,
+      })),
     };
 
-    const pack = d3.pack().size([800, 800]).padding(10); // Adjust the padding value as needed
-    // Create a hierarchy from the data
+    const pack = d3.pack().size([800, 800]).padding(10); //Juster padding efter behov
+    // Laver et heiraki ud fra vores data
     const root = d3
       .hierarchy(viz2data)
       .sum((d) => d.rounded_mismanaged)
-      .sort((a, b) => b.rounded_mismanaged - a.rounded_mismanaged); // Sort nodes by mismanaged value
+      .sort((a, b) => b.rounded_mismanaged - a.rounded_mismanaged); // Sortere 'nodes' efter behov
 
-    // Assign the hierarchical data to the pack layout
+    // Tildel hierarkisk data til pack-layoutet
     const packedData = pack(root);
-    // Select the circular packing SVG
+    // Vælger circular paclong SVG'en
     const svg2 = d3.select("#vis2").attr("width", 800).attr("height", 800);
 
-    // Create circles for each node, excluding the root and nodes with mismanaged value less than 5
+    // Opret cirkler ud fra hver node, og filtrere data der er under 0.1 da det er for småt og gør visualiseringen grim
     const nodes = svg2
       .selectAll("circle")
       .data(
         packedData.descendants().filter((d) => d.data.rounded_mismanaged >= 0.1)
-      ) // Filter out values less than 5
+      ) //
       .enter()
       .append("circle")
       .attr("cx", (d) => d.x)
@@ -271,9 +265,9 @@ fetch("http://localhost:3000/plastic")
       .on("mouseover", handleMouseOver)
       .on("mouseout", handleMouseOut);
 
-    // Define the mouseover and mouseout event handlers
+    // Funktionen for mouseover
     function handleMouseOver(d, i) {
-      // Show a tooltip with the country, entity, and mismanaged value
+      // Skal vise en tekst der skriver landekode, land og mismanaged værdi
       const tooltip = d3.select("#tooltip");
 
       tooltip.transition().duration(200).style("opacity", 0.9);
@@ -287,15 +281,15 @@ fetch("http://localhost:3000/plastic")
     }
 
     function handleMouseOut(d, i) {
-      // Hide the tooltip on mouseout
+      // Det er for at fjerne tekste når man fjerner musen
       d3.select("#tooltip").transition().duration(500).style("opacity", 0);
     }
 
-    // Optional: Add text labels
+    // Vi tilføjer tekst bobler til cirkelerne der viser landekode
     svg2
-      .selectAll("text") // Select from svg2, not svg
+      .selectAll("text")
       .data(
-        packedData.descendants().filter((d) => d.data.rounded_mismanaged >= 0.1)
+        packedData.descendants().filter((d) => d.data.rounded_mismanaged >= 0.1) //Vi filtrere også her ellers laver den tekst til alle dem vi fjernede før
       )
       .enter()
       .append("text")
