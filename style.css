@@ -18,6 +18,7 @@ h1 {
   padding-top: 60px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-top: -2%;
+  color: rgb(0, 63, 139, 139);
 }
 
 /* Underubrik: "En tikkende bombe for vores planet" og
@@ -25,6 +26,7 @@ tekst til visualiseriner/garbage patch*/
 h2,
 h3 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgb(0, 63, 139, 139);
 }
 
 /* Overskrift: "Hvor meget af vores plast ender i vores have?" og "Hvor meget plast producerer vi?" */
@@ -32,6 +34,7 @@ h4 {
   background-color: aquamarine;
   font-size: larger;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgb(0, 63, 139, 139);
 }
 
 /* Overskrift til vis1: Plast udviklingen siden 1950 */
@@ -41,6 +44,7 @@ h5 {
   left: 45%;
   margin-bottom: 100px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgb(0, 63, 139, 139);
 }
 
 /* Introteksten indsættes og placeres i midten */
@@ -52,6 +56,7 @@ h5 {
   padding-top: 50px;
   margin-bottom: 100px;
   font-size: 20px;
+  color: aliceblue;
 }
 
 /* Billede af garbage patch indsættes og rettes til */
@@ -83,6 +88,7 @@ h5 {
 .vis_intro {
   font-size: large;
   font-family: Cambria;
+  color: aliceblue;
 }
 
 .vis1,
@@ -96,6 +102,7 @@ h5 {
   flex-basis: calc(25% - 20px); /* Danner 3 kolonner med 20px afstand */
   box-sizing: border-box;
   padding: 20px;
+  color: rgb(0, 63, 139, 139);
 }
 
 g {
