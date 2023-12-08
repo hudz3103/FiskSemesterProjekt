@@ -1,3 +1,4 @@
+// Indhent data
 fetch("http://localhost:3000/annualPlastic")
   .then((response) => {
     if (!response.ok) {
@@ -8,14 +9,15 @@ fetch("http://localhost:3000/annualPlastic")
   .then((dataAnnualPlastic) => {
     console.log(dataAnnualPlastic);
 
+    // Vi refererer til data1 i koden
     const data1 = dataAnnualPlastic.foods;
 
-    // Set up the chart dimensions
+    // opsæt margener, højde og bredde
     const margin = { top: 40, right: 90, bottom: 20, left: 90 };
     const width = 800 - margin.left - margin.right; // Adjust the width as needed
     const height = 600 - margin.top - margin.bottom; // Adjust the height as needed
 
-    // Create an SVG container
+    // Opret svg elementet
     const svg = d3
       .select(".vis1")
       .append("svg")
@@ -24,24 +26,24 @@ fetch("http://localhost:3000/annualPlastic")
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // Define the scales
+    // Skalaerne på akserne defineres
     const xScale = d3.scaleLinear().domain([1950, 2020]).range([0, width]);
     const yScale = d3.scaleLinear().domain([0, 500]).range([height, 0]);
 
-    // Create the line
+    // Linjen defineres
     const line = d3
       .line()
       .x((d) => xScale(d.year))
       .y((d) => yScale(d.scaled_prod_ton));
 
-    // Add the X and Y axis
+    // Vi tilføjer x- og y-akser til svg'en
     svg
       .append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(xScale).ticks(20).tickFormat(d3.format("d")))
       .style("font-size", "14px");
 
-    // Add y-axis label
+    // Label til y-aksen
     svg
       .append("text")
       .attr("transform", "rotate(-90)")
@@ -52,7 +54,7 @@ fetch("http://localhost:3000/annualPlastic")
       .style("font-size", "20px")
       .text("Plast i millioner ton");
 
-    // Add x-axis labeqxn
+    // Label itl x-aksen
     svg
       .append("text")
       .attr("x", width / 2)
@@ -62,7 +64,7 @@ fetch("http://localhost:3000/annualPlastic")
 
     svg.append("g").call(d3.axisLeft(yScale)).style("font-size", "14px");
 
-    // Add the line to the chart
+    // Grafen sættes ind i svg'en
     svg
       .append("path")
       .datum(data1)
@@ -71,6 +73,7 @@ fetch("http://localhost:3000/annualPlastic")
       .attr("stroke-width", 6)
       .attr("d", line);
 
+    // Mouseover funktion oprettes, vha. at gøre punkterne på grafen lidt større og gøre dem usynlige
     svg
       .selectAll("circle")
       .data(data1)
@@ -84,9 +87,9 @@ fetch("http://localhost:3000/annualPlastic")
       .on("mouseover", handleMouseOver)
       .on("mouseout", handleMouseOut);
 
-    // Function to handle mouseover event
+    // Funktionen for handleren af mouseoveren
     function handleMouseOver(d) {
-      // Add text inside the square
+      // Teksten som vises på mouseoveren
       svg
         .append("text")
         .attr("class", "tooltip-text")
@@ -106,14 +109,13 @@ fetch("http://localhost:3000/annualPlastic")
         .attr("fill", "black");
     }
 
-    // Function to handle mouseout event
+    // Funktion for når musen forsvinder fra et punkt
     function handleMouseOut() {
-      // Remove the text elements on mouseout
       svg.selectAll(".tooltip-text").remove();
     }
   })
   .catch((error) => {
-    // Handle errors during the fetch
+    // Catch error funktion
     console.error("Fetch error for annualPlastic:", error);
   });
 
@@ -137,14 +139,14 @@ const data = {
   ],
 };
 
-// Set up SVG container
+// Opret SVG container
 const svg3 = d3
   .select(".vis3")
   .append("svg")
-  .attr("width", 1000) // Increased width
-  .attr("height", 800); // Increased height;
+  .attr("width", 1000)
+  .attr("height", 800);
 
-// Create a group for the circles and labels
+// Opretter en gruppe for labels og cirklerne
 const group = svg3.append("g").attr("transform", "translate(500, 400)"); // Centered translation
 
 const customColors = ["#b0c4de", "#4682b4", "#4169e1", "#00008b"];
