@@ -302,9 +302,11 @@ fetch("http://localhost:3000/plastic")
       .style("pointer-events", "none"); //gør at musen ikke reagerer på teksten i boblerne;
   })
   .catch((error) => {
-    // Handle errors during the fetch
+    // Håndterer error under fetchen
     console.error("Fetch error:", error);
   });
+
+  //gør at elementer bliver loadet ind glidende i takt med scroll
 
 function reveal() {
   let reveals = document.querySelectorAll(".reveal");
