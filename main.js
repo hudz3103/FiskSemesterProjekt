@@ -177,10 +177,10 @@ function mouseover(d, i) {
     .style("font-weight", "bold")
     .text(`${name}: ${circles.data()[i]} Mio`);
 
-  //Opdatere teksten baseret på musens position
+  //Opdaterer teksten baseret på musens position
   svg3.on("mousemove", function () {
     const [x, y] = d3.mouse(this);
-    tooltip.attr("x", x).attr("y", y - 10); //Justere dens position
+    tooltip.attr("x", x).attr("y", y - 10); //Justerer dens position
   });
 }
 // Funktion til at få navnet fra data baseret på index
@@ -202,7 +202,7 @@ function getNameFromIndex(obj, index) {
 // Mouseout event handler
 function mouseout() {
   svg3.select(".tooltip").remove();
-  svg3.on("mousemove", null); // Remove the mousemove event listener
+  svg3.on("mousemove", null); // Fjerner mousemove eventlisteneren
 }
 
 //Vi henter data ind fra serveren
