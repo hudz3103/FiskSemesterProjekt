@@ -1,5 +1,5 @@
 // Indhent data
-fetch("http://localhost:3000/annualPlastic")
+fetch("https://fisk-server.onrender.com/annualPlastic")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
@@ -206,7 +206,7 @@ function mouseout() {
 }
 
 //Vi henter data ind fra serveren
-fetch("http://localhost:3000/plastic")
+fetch("https://fisk-server.onrender.com/plastic")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok");
