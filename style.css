@@ -202,7 +202,7 @@ g {
   border: 1px solid #ccc;
   padding: 10px;
   font-size: 14px;
-  opacity: 1; /* Bestemmer gennemsigtigheden */
+  opacity: 0; /* Bestemmer gennemsigtigheden */
   pointer-events: none; /* Musen forbliver uændret, når den går over tekst */
 }
 
