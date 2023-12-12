@@ -41,7 +41,7 @@ fetch("https://fisk-server.onrender.com/annualPlastic")
       .append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(xScale).ticks(20).tickFormat(d3.format("d")))
-      .style("font-size", "14px");
+      .style("font-size", "16px");
 
     // Label til y-aksen
     svg
@@ -63,7 +63,7 @@ fetch("https://fisk-server.onrender.com/annualPlastic")
       .style("text-anchor", "middle")
       .text("Year");
 
-    svg.append("g").call(d3.axisLeft(yScale)).style("font-size", "14px");
+    svg.append("g").call(d3.axisLeft(yScale)).style("font-size", "16px");
 
     // Grafen sættes ind i svg'en
     svg
@@ -122,19 +122,19 @@ fetch("https://fisk-server.onrender.com/annualPlastic")
 
 // JSON data
 const data = {
-  name: "Plastic waste generated",
+  name: "Plast affald i alt",
   value: "353 Mio",
   wasteDetails: [
     {
-      name: "Mismanaged plastic waste",
+      name: "Plast som er fejl håndteret",
       value: "82 Mio",
     },
     {
-      name: "Plastic leaked to the environment",
+      name: "Plast der forsvinder ud i miljøet",
       value: "19 Mio",
     },
     {
-      name: "Plastic leaked to rivers and oceans",
+      name: "Plast som ender i havet",
       value: "6 Mio",
     },
   ],
