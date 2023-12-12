@@ -58,6 +58,10 @@ ADD COLUMN scaled_prod_ton numeric;
 UPDATE annual_prod
 SET scaled_prod_ton = (plastic_prod_ton / 1000000);
 
+/*Slettet World fra databasen */
+DELETE FROM plastic_pollution
+WHERE (entity = 'World') 
+
 
 
 
