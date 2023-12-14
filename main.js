@@ -52,7 +52,7 @@ fetch("https://fisk-server.onrender.com/annualPlastic")
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .style("font-size", "20px")
-      .style("fill","rgb(0,63,139,139)")
+      .style("fill", "rgb(0,63,139,139)")
       .text("Plast i millioner ton");
 
     // Label itl x-aksen
@@ -307,7 +307,7 @@ fetch("https://fisk-server.onrender.com/plastic")
     console.error("Fetch error:", error);
   });
 
-  //gør at elementer bliver loadet ind glidende i takt med scroll
+//gør at elementer bliver loadet ind glidende i takt med scroll
 
 function reveal() {
   let reveals = document.querySelectorAll(".reveal");

@@ -38,12 +38,12 @@ h4 {
 
 /* Overskrift til vis1: Plast udviklingen siden 1950 */
 h5 {
-  font-size: large;
+  font-size: 25px;
   position: absolute;
   left: 20%;
-  margin-bottom: 200px;
+  margin-top: -1%;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: rgb(0, 63, 139, 139);
+  color: cyan;
 }
 
 /* Introteksten indsættes og placeres i midten */
@@ -68,7 +68,6 @@ h5 {
   margin-top: 100px;
   border-radius: 15px;
 }
-
 
 /* Ord i introtekst bliver fed */
 .intro span {
@@ -316,4 +315,13 @@ g {
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
+}
+
+.h5v2 {
+  font-size: 25px;
+  position: absolute;
+  left: 52%;
+  margin-top: -1%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: cyan;
 }
