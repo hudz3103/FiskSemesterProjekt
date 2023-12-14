@@ -97,6 +97,7 @@ fetch("https://fisk-server.onrender.com/annualPlastic")
         .attr("x", xScale(d.year))
         .attr("y", yScale(d.scaled_prod_ton) - 25)
         .attr("text-anchor", "middle")
+        .attr("font-size", "18px")
         .text(d.year)
         .attr("fill", "black");
 
@@ -106,6 +107,7 @@ fetch("https://fisk-server.onrender.com/annualPlastic")
         .attr("x", xScale(d.year))
         .attr("y", yScale(d.scaled_prod_ton) - 15)
         .attr("text-anchor", "middle")
+        .attr("font-size", "18px")
         .text(`${d.scaled_prod_ton} Million tons of plastic`)
         .attr("fill", "black");
     }
